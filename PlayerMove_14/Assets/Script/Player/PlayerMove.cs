@@ -147,7 +147,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)|| Input.GetAxis("Move") > 0)
         {
 
-            if (Input.GetKey(KeyCode.X) || Input.GetButton("Ran"))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Ran"))
             {
                 R_RanFlag = true;
                 R_MoveFlag = false;

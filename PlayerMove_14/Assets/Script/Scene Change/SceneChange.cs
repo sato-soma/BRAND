@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SceneChange: MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if(other.tag=="Player")
         {
+            PlayerState.Event1EndFlag = false;
             CloseSystem.CloseGame();
         }
     }

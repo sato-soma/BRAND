@@ -259,6 +259,7 @@ MonoBehaviour:
   speed: 0.05
   down: 0.01
   up: 0.01
+  dis: 0
   confirmation: 0000
   hit: 0
   search: 15
@@ -338,14 +339,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 188226137}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &304513259 stripped
@@ -418,14 +422,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 310334774}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &336943183 stripped
@@ -622,7 +629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387671445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 294.13, y: 1.8600001, z: -1.8181915}
+  m_LocalPosition: {x: 305.72998, y: 1.8600001, z: -1.8181915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 822252728}
@@ -669,7 +676,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.51
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
@@ -1199,14 +1206,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 661281720}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
   dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &667452274 stripped
@@ -1259,14 +1269,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 667452274}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &684461912 stripped
@@ -1686,7 +1699,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: 2.02
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
@@ -1765,7 +1778,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: fd9e2f9e6a5adf74abb787c6b53c045f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd9e2f9e6a5adf74abb787c6b53c045f,
         type: 3}
@@ -1991,14 +2004,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 861262773}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &863695635 stripped
@@ -2105,14 +2121,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 927177384}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &937367081 stripped
@@ -2155,7 +2174,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8c8137146ce1fdd47b118a8fa3efb1e3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 236.25
+      value: 266.05
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8c8137146ce1fdd47b118a8fa3efb1e3,
         type: 3}
@@ -2442,9 +2461,10 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   move: {x: 0, y: 0, z: 0}
   speed: 0.05
-  dashSpeed: 0.2
+  dashSpeed: 0.25
   searchOn: 10
   searchOff: 10
+  dis: 0
   posFall: -3
   times:
   - 0
@@ -2488,9 +2508,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1004827025}
-  Jump: 250
+  Jump: 400
   MoveSpeed: 3
-  RanSpeed: 6
+  RanSpeed: 7
   anim: {fileID: 0}
 --- !u!114 &1004827027
 MonoBehaviour:
@@ -2546,7 +2566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004827025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.4, y: 2.51, z: -0.25}
+  m_LocalPosition: {x: -11.6, y: 2.51, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1130141835}
@@ -2654,14 +2674,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 1052640063}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &1080728569
@@ -3126,12 +3149,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: de4dce2b03d166141ad209f41eca0771,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.6
+      value: 39.75
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: de4dce2b03d166141ad209f41eca0771,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: de4dce2b03d166141ad209f41eca0771,
         type: 3}
@@ -3334,6 +3357,7 @@ MonoBehaviour:
   speed: 0.05
   down: 0.01
   up: 0.01
+  dis: 0
   confirmation: 0000
   hit: 0
   search: 15
@@ -3817,12 +3841,12 @@ PrefabInstance:
     - target: {fileID: -7523042546860221615, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.94
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -7523042546860221615, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.48
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: -7344454603598293851, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
@@ -3862,12 +3886,12 @@ PrefabInstance:
     - target: {fileID: -4367173771839755019, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86
+      value: 95.7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123.3
+      value: 123.1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
@@ -3927,7 +3951,7 @@ PrefabInstance:
     - target: {fileID: -3763414325203188157, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 130.6
+      value: 142.9
       objectReference: {fileID: 0}
     - target: {fileID: -3518695464543312709, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
@@ -3942,7 +3966,7 @@ PrefabInstance:
     - target: {fileID: -3514021741914959556, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.2
+      value: 42.600006
       objectReference: {fileID: 0}
     - target: {fileID: -3494385389558538866, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
@@ -4102,7 +4126,7 @@ PrefabInstance:
     - target: {fileID: 5454725765320579367, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 119.9
+      value: 133.7
       objectReference: {fileID: 0}
     - target: {fileID: 5663354039411876341, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
@@ -4162,7 +4186,7 @@ PrefabInstance:
     - target: {fileID: 8599141216313416979, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.78
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8660662137713703316, guid: d50996303a1f9b2478a6d144af83441b,
         type: 3}
@@ -4448,14 +4472,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 1397125764}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &1406557464 stripped
@@ -4508,14 +4535,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   rabbits: {fileID: 1406557464}
+  alpha: {r: 0, g: 0, b: 0, a: 0}
   speed: 0.05
-  dashSpeed: 0.12
+  dashSpeed: 0.1
   posFall: -3
+  posFront: 0
   jump: 200
   searchOn: 15
   searchOff: 15
   search: 30
   count: 0
+  dis: 0
   searchs: 0
   hits: 0
 --- !u!1 &1430419916 stripped
@@ -4589,11 +4619,12 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   move: {x: 0, y: 0, z: 0}
   speed: 0.05
-  dashSpeed: 0.15
+  dashSpeed: 0.6
   searchOn: 20
   searchOff: 20
   jump: 25
   infinite: 10
+  dis: 0
   posFall: -3
   times:
   - 0
@@ -4696,7 +4727,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.17
+      value: 4.64
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
@@ -5058,11 +5089,12 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   move: {x: 0, y: 0, z: 0}
   speed: 0.06
-  dashSpeed: 0.15
+  dashSpeed: 0.6
   searchOn: 20
   searchOff: 20
   jump: 40
   infinite: 10
+  dis: 0
   posFall: -3
   times:
   - 0
@@ -5234,6 +5266,7 @@ MonoBehaviour:
   speed: 0.05
   down: 0.01
   up: 0.01
+  dis: 0
   confirmation: 0000
   hit: 0
   search: 15
@@ -5605,7 +5638,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8c8137146ce1fdd47b118a8fa3efb1e3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 236.19
+      value: 265.99
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8c8137146ce1fdd47b118a8fa3efb1e3,
         type: 3}
@@ -5773,7 +5806,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8c8137146ce1fdd47b118a8fa3efb1e3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 235
+      value: 264.8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8c8137146ce1fdd47b118a8fa3efb1e3,
         type: 3}
@@ -5867,7 +5900,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 2da20b8068689c7489ee7a893adfb503,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 178.32
+      value: 185.7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2da20b8068689c7489ee7a893adfb503,
         type: 3}
@@ -6343,7 +6376,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.96
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
@@ -6492,7 +6525,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.94
+      value: 2.06
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 243dcfdf38e90f748ba53f4051885d96,
         type: 3}

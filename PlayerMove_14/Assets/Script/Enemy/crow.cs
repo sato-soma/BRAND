@@ -15,6 +15,8 @@ public class crow : MonoBehaviour
     public float down;
     public float up;
 
+    public float dis;
+
     public bool[] confirmation = new bool[2];
 
     public bool hit;
@@ -45,8 +47,13 @@ public class crow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, transform.position);
 
+        EnemyNomal();
+    }
+
+    private void EnemyNomal()
+    {
         if (hit == true)
         {
             if (times[4] < 3)

@@ -25,6 +25,8 @@ public class boar : MonoBehaviour
     public float searchOn;
     public float searchOff;
 
+    public float dis;
+
     public float posFall;
 
     //カウント
@@ -56,25 +58,31 @@ public class boar : MonoBehaviour
         move.Normalize();
 
         //プレイヤーとイノシシの距離が視覚範囲の数値と比較
-        float dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, transform.position);
 
-        if (hit == true)
+        EnemyTargetOff();
+
+        EnemyTargetOn();
+
+        if (pos.y < posFall)
         {
-            if (times[4] < 3)
-            {
-                times[4] += 1.0f / 60.0f;
-            }
-            else
-            {
-                times[4] = 0;
-                hit = false;
-            }
+            gameObject.SetActive(false);
+            pos.y = posFall;
         }
 
+        if (PlayerHP.FadeIn == true)
+        {
+            pos.y = posSave.y;
+            gameObject.SetActive(true);
+        }
+
+    }
+
+    //視覚範囲入ってない時、通常移動
+    private void EnemyTargetOff()
+    {
         if (pos.y > posFall)
         {
-
-            //視覚範囲入ってない時、通常移動
             if (dis >= searchOff && hit == false)
             {
                 times[2] = 0;
@@ -126,8 +134,28 @@ public class boar : MonoBehaviour
                 }
 
             }
+        }
+    }
 
-            //視覚範囲入った時、プレイヤーを追いかける
+    //視覚範囲入った時、プレイヤーを追いかける
+    private void EnemyTargetOn()
+    {
+        //プレイヤーに当たった時3秒止まる
+        if (hit == true)
+        {
+            if (times[4] < 3)
+            {
+                times[4] += 1.0f / 60.0f;
+            }
+            else
+            {
+                times[4] = 0;
+                hit = false;
+            }
+        }
+
+        if (pos.y > posFall)
+        {
             if (dis <= searchOn && hit == false)
             {
                 times[0] = 0;
@@ -187,19 +215,6 @@ public class boar : MonoBehaviour
                 }
             }
         }
-
-        if (pos.y < posFall)
-        {
-            gameObject.SetActive(false);
-            pos.y = posFall;
-        }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            pos.y = posSave.y;
-            gameObject.SetActive(true);
-        }
-
     }
 
     private void OnCollisionEnter(Collision collision)

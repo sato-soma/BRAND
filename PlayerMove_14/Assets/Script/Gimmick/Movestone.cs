@@ -7,9 +7,7 @@ public class Movestone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
 
-       
     }
 
     // Update is called once per frame
@@ -17,11 +15,9 @@ public class Movestone : MonoBehaviour
     {
         if (ReturmGame.RestartFlag1 == true)
         {
-
-            if (transform.position.y < 5)
+            if (transform.position.y < 15)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + 0.02f, transform.position.z);
-
             }
             else
             {

@@ -31,6 +31,7 @@ public class wolf : MonoBehaviour
 
     public float jump;
     public float infinite;
+    public float dis;
 
     public float posFall;
 
@@ -42,7 +43,6 @@ public class wolf : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         rigid = GetComponent<Rigidbody>();
 
         pos = gameObject.transform.position;
@@ -65,24 +65,33 @@ public class wolf : MonoBehaviour
         move.Normalize();
 
         //プレイヤーとオオカミの距離が視覚範囲の数値と比較
-        float dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, transform.position);
 
-        if (hits == true)
+        EnemyTargetOff();
+
+        EnemyTargetOn();
+
+        if (pos.y < posFall)
         {
-            if (times[4] < 3)
-            {
-                times[4] += 1.0f / 60.0f;
-            }
-            else
-            {
-                times[4] = 0;
-                hits = false;
-            }
+            gameObject.SetActive(false);
+
+            pos.y = posFall;
         }
 
+        if (PlayerHP.FadeIn == true)
+        {
+            pos.y = posSave.y;
+            gameObject.SetActive(true);
+        }
+
+    }
+
+    //視覚範囲入ってない時、通常移動
+    private void EnemyTargetOff()
+    {
         if (pos.y > posFall)
         {
-            //視覚範囲入ってない時、通常移動
+            
             if (dis >= searchOff && hits == false)
             {
 
@@ -159,10 +168,28 @@ public class wolf : MonoBehaviour
                 }
 
             }
+        }
+    }
 
-            //Debug.DrawRay(ray.origin, ray.direction * infinite, Color.red);
+    //視覚範囲入った時、プレイヤーを追いかける
+    private void EnemyTargetOn()
+    {
+        //当たった時3秒止まる
+        if (hits == true)
+        {
+            if (times[4] < 3)
+            {
+                times[4] += 1.0f / 60.0f;
+            }
+            else
+            {
+                times[4] = 0;
+                hits = false;
+            }
+        }
 
-            //視覚範囲入った時、プレイヤーを追いかける
+        if (pos.y > posFall)
+        {
             if (dis <= searchOn && hits == false)
             {
                 times[0] = 0;
@@ -181,7 +208,7 @@ public class wolf : MonoBehaviour
 
                     if (times[2] > 1.5f)
                     {
-                        dashSpeed = 0.1f;
+                        dashSpeed = 0.2f;
                     }
 
                     ray = new Ray(new Vector3(transform.position.x - 2.3f, transform.position.y, transform.position.z), new Vector3(-1, 0.8f, 0));
@@ -218,7 +245,7 @@ public class wolf : MonoBehaviour
 
                     if (times[3] > 1.5f)
                     {
-                        dashSpeed = 0.1f;
+                        dashSpeed = 0.2f;
                     }
 
                     ray = new Ray(new Vector3(transform.position.x + 2.3f, transform.position.y, transform.position.z), new Vector3(1, 0.8f, 0));
@@ -244,25 +271,11 @@ public class wolf : MonoBehaviour
                 }
             }
         }
-
-        if (pos.y < posFall)
-        {
-            gameObject.SetActive(false);
-
-            pos.y = posFall;
-        }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            pos.y = posSave.y;
-            gameObject.SetActive(true);
-        }
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //これプレイヤーにつけてHP管理する
+        //これプレイヤーに当たった時止まる
         if (collision.gameObject.CompareTag("Player"))
         {
             hits = true;

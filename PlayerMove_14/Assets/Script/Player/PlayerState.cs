@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-   
-
     private float ReStartPosX = ReturmGame.PlayerRestartPosition.x;
     private float ReStartPosY = ReturmGame.PlayerRestartPosition.y;
     private float RestartPosZ = ReturmGame.PlayerRestartPosition.z;
@@ -35,7 +33,7 @@ public class PlayerState : MonoBehaviour
             //イベント以降前のポジションにワープ
             transform.position = new Vector3(ReStartPosX, ReStartPosY, RestartPosZ);
             EventTime = false;
-            ReturmGame.RestartFlag1 = false;
+            //ReturmGame.RestartFlag1 = false;
         }
     }
 

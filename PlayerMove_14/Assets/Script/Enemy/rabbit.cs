@@ -7,6 +7,8 @@ public class rabbit : MonoBehaviour
     public GameObject player;
     public GameObject rabbits;
 
+    public Color alpha;
+
     private Rigidbody rigid;
 
     private Vector3 pos;
@@ -16,6 +18,7 @@ public class rabbit : MonoBehaviour
     public float dashSpeed;
 
     public float posFall;
+    public float posFront;
 
     public float jump;
 
@@ -24,6 +27,7 @@ public class rabbit : MonoBehaviour
     public float search;
 
     public float count;
+    public float dis;
 
     public bool searchs;
 
@@ -33,6 +37,8 @@ public class rabbit : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
+
+        alpha = new Color();
 
         //現在位置
         pos = rabbits.transform.position;
@@ -48,8 +54,28 @@ public class rabbit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, transform.position);
+
+        EnemyNomal();
         
+        if (pos.y < posFall)
+        {
+            rabbits.SetActive(false);
+            pos.y = -5;
+        }
+
+        if (PlayerHP.FadeIn == true)
+        {
+            rabbits.SetActive(true);
+            pos = posSave;
+        }
+
+        rabbits.transform.position = pos;
+        
+    }
+
+    private void EnemyNomal()
+    {
         //視覚範囲入ってない時
         if (search > dis)
         {
@@ -72,6 +98,13 @@ public class rabbit : MonoBehaviour
                     pos.x -= dashSpeed;
                     rabbits.transform.position = pos;
                 }
+
+                //オブジェクト消せるか考え中
+                if (pos.x > pos.x - 100f)
+                {
+                    if (alpha.a >= 0)
+                        alpha.a -= 0.1f;
+                }
             }
 
         }
@@ -79,36 +112,6 @@ public class rabbit : MonoBehaviour
         {
             searchs = false;
         }
-        
-        if(pos.y < posFall)
-        {
-            rabbits.SetActive(false);
-            pos.y = -5;
-            //hits = true;
-        }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            rabbits.SetActive(true);
-            pos = posSave;
-        }
-
-        rabbits.transform.position = pos;
-
-
-        //if (hits == true)
-        //{
-        //    if (count < 3f)
-        //    {
-        //        count += 1.0f / 60.0f;
-
-        //        if (count >= 3f)
-        //        {
-        //            rabbits.SetActive(true);
-        //            pos = posSave;
-        //        }
-        //    }
-        //}
     }
 
     private void OnCollisionEnter(Collision collision)
