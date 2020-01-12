@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 橋板を表示、非表示を繰り返しているだけ
+
 public class LongFallingFloor : MonoBehaviour
 {
     public float FallingSpeed = 2.0f;
@@ -21,70 +23,56 @@ public class LongFallingFloor : MonoBehaviour
     private int Value = 18;
     private int MaxValue = 17;
 
+    private float CountTime = 0.0f;
+    private float CountTimeMax = 0.2f;
+
     void Start()
     {
-        // 橋板が順番ではないため
-
         for(int j=0; j < Value; j++)
         {
             GetChildPosition[j] = transform.GetChild(j).gameObject.transform.position;
             GetStartPos[j] = transform.GetChild(j).gameObject.transform.position;
-        }
-       
-       
-       
-    }
 
+            // 最初に消しとく
+            transform.GetChild(j).gameObject.SetActive(false);
+        }   
+    }
     void Update()
     {
-        // transform.GetChild(5).gameObject.SetActive(false); //Spriteを消す
+        Debug.Log(GetChildPosition[5]);
 
-        Debug.Log(transform.GetChild(5).gameObject.transform.position);
-
-        // 死んだら
+        //// 死んだら
         if (PlayerHP.FadeIn == true)
         {
             // 位置更新
             for (i = 0; i < Value; i++)
             {
                 GetChildPosition[i] = GetStartPos[i];
-                transform.GetChild(i).gameObject.SetActive(true);
+                transform.GetChild(i).gameObject.SetActive(false);
             }
             Count = 0;
             LongPassFlag = false;
         }
 
-        // 橋を渡る時
+        // イベント後
         if (LongPassFlag == true)
         {
+            transform.GetChild(Count).gameObject.SetActive(true);
+            CountTime -= 1.0f / 60.0f;
 
-            // とりあえず落とす
-            GetChildPosition[Count].y -= FallingSpeed * Time.deltaTime;
-
-            // 板のじゅんばんが無茶苦茶なので消すは…
-            if (GetChildPosition[Count].y < FallingEndPosition)
+            if (CountTime < 0)
             {
-                transform.GetChild(Count).gameObject.SetActive(false);
-                Count += 1;
+                Count++;
+                CountTime = CountTimeMax;
             }
-
-            if (Count > MaxValue)
-            {
-                LongPassFlag = false;
-                Count = 0;
-            }
-
 
         }
 
-        // 位置更新
-        for(int j = 0; j < Value; j++)
+        if (Count > MaxValue)
         {
-            transform.GetChild(j).gameObject.transform.position = GetChildPosition[j];
-
+            LongPassFlag = false;
+            ReturmGame.RestartFlag1 = false;
+            Count = 0;
         }
-
-       
-      
     }
 }

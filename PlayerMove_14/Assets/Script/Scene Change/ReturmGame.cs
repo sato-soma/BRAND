@@ -34,6 +34,7 @@ public class ReturmGame : MonoBehaviour
             if (Event1.Event_1Flag == true)
             {
                 RestartFlag1 = true;
+                LongFallingFloor.LongPassFlag = true;
                 SceneManager.LoadScene("playerMove");
             }
         }
