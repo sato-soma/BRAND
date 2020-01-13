@@ -39,7 +39,7 @@ public class LongFallingFloor : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(GetChildPosition[5]);
+        
 
         //// 死んだら
         if (PlayerHP.FadeIn == true)

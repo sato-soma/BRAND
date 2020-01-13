@@ -75,8 +75,8 @@ public class FallingFloor : MonoBehaviour
             transform.GetChild(j).gameObject.transform.position = GetChildPosition[j];
         }
         
-        Debug.Log(transform.GetChild(6));
-        //Debug.Log(transform.GetChild(7));
-        Debug.Log(PassFlag);
+        //Debug.Log(transform.GetChild(6));
+        ////Debug.Log(transform.GetChild(7));
+        //Debug.Log(PassFlag);
     }
 }

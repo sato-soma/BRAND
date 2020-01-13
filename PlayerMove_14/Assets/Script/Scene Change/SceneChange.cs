@@ -20,7 +20,9 @@ public class SceneChange: MonoBehaviour
     {
         if(other.tag=="Player")
         {
-            PlayerState.Event1EndFlag = false;
+            PlayerState.Event1EndFlag = false; //イベントリセット
+            PlayerState.Event0EndFlag = false; //イベントリセット
+           
             CloseSystem.CloseGame();
         }
     }

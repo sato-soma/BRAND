@@ -18,7 +18,8 @@ public class PlayerHP : MonoBehaviour
     public static bool FadeOut = false; //明るくする
     public static bool FadeIn = false; //暗くする
 
-    public static int Damage1 = 3; //仮
+   
+    public static int Damage1; //仮
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,8 @@ public class PlayerHP : MonoBehaviour
         Green = Panel.GetComponent<Image>().color.g;
         Blue = Panel.GetComponent<Image>().color.b;
         Alfa = Panel.GetComponent<Image>().color.a;
+
+        Damage1 = 3; //プレイヤーの体力
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class PlayerHP : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
         transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
 
-
+        Debug.Log(Damage1);
 
         if (FadeIn==true) //暗くする
         {
