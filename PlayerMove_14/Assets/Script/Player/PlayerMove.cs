@@ -85,7 +85,8 @@ public class PlayerMove : MonoBehaviour
             if (jumpFlag == true)
             {
                 //ジャンプ中の左右移動をゆっくりにしている。
-                Velocity = Velocity.normalized * (Speed / 1.5f) * Time.deltaTime;
+                Velocity = Velocity.normalized * (Speed / 1.25f) * Time.deltaTime;
+                
             }
             else
             {

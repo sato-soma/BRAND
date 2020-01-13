@@ -20,8 +20,9 @@ public class ReturmGame : MonoBehaviour
     void Start()
     {
         PlayerRestartPosition = PlayerMove.PlayerPositioned; //イベント前のPlayer位置保存
-        HpUiRestartPosition = HPUI.HpUiPositionOld; //UIの位置保存
-        HpResutartCount = HPUI.HitCount; //イベント前のHP保存
+
+       // HpUiRestartPosition = HPUI.HpUiPositionOld; //UIの位置保存
+       // HpResutartCount = HPUI.HitCount; //イベント前のHP保存
         
     }
 
