@@ -109,17 +109,18 @@ public class wolf : MonoBehaviour
                         transform.Rotate(Vector3.up, -180f);
                     }
 
-                    ray = new Ray(new Vector3(transform.position.x - 2.3f, transform.position.y, transform.position.z), new Vector3(-1, 0.8f, 0));
+                    //障害物飛び越えるためのソース
+                    //ray = new Ray(new Vector3(transform.position.x - 2.3f, transform.position.y, transform.position.z), new Vector3(-1, 0.8f, 0));
 
-                    Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
+                    //Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
 
-                    if (Physics.Raycast(ray, out hit, infinite))
-                    {
-                        if (hit.collider.tag == "bloak")
-                        {
-                            rigid.AddForce(transform.up * jump);
-                        }
-                    }
+                    //if (Physics.Raycast(ray, out hit, infinite))
+                    //{
+                    //    if (hit.collider.tag == "bloak")
+                    //    {
+                    //        rigid.AddForce(transform.up * jump);
+                    //    }
+                    //}
 
                     pos = transform.position;
                     pos.x -= speed;
@@ -138,17 +139,18 @@ public class wolf : MonoBehaviour
                 {
                     times[1] += 1.0f / 60f;
 
-                    ray = new Ray(new Vector3(transform.position.x + 2.3f, transform.position.y, transform.position.z), new Vector3(1, 0.8f, 0));
+                    //障害物飛び越えるためのソース
+                    //ray = new Ray(new Vector3(transform.position.x + 2.3f, transform.position.y, transform.position.z), new Vector3(1, 0.8f, 0));
 
-                    Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
+                    //Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
 
-                    if (Physics.Raycast(ray, out hit, infinite))
-                    {
-                        if (hit.collider.tag == "bloak")
-                        {
-                            rigid.AddForce(transform.up * jump);
-                        }
-                    }
+                    //if (Physics.Raycast(ray, out hit, infinite))
+                    //{
+                    //    if (hit.collider.tag == "bloak")
+                    //    {
+                    //        rigid.AddForce(transform.up * jump);
+                    //    }
+                    //}
 
                     if (transform.localRotation.eulerAngles.y == 0)
                     {
@@ -208,20 +210,21 @@ public class wolf : MonoBehaviour
 
                     if (times[2] > 1.5f)
                     {
-                        dashSpeed = 0.2f;
+                        dashSpeed = 0.13f;
                     }
 
-                    ray = new Ray(new Vector3(transform.position.x - 2.3f, transform.position.y, transform.position.z), new Vector3(-1, 0.8f, 0));
+                    //障害物飛び越えるためのソース
+                    //ray = new Ray(new Vector3(transform.position.x - 2.3f, transform.position.y, transform.position.z), new Vector3(-1, 0.8f, 0));
 
-                    Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
+                    //Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
 
-                    if (Physics.Raycast(ray, out hit, infinite))
-                    {
-                        if (hit.collider.tag == "bloak")
-                        {
-                            rigid.AddForce(transform.up * jump);
-                        }
-                    }
+                    //if (Physics.Raycast(ray, out hit, infinite))
+                    //{
+                    //    if (hit.collider.tag == "bloak")
+                    //    {
+                    //        rigid.AddForce(transform.up * jump);
+                    //    }
+                    //}
 
                     if (transform.localRotation.eulerAngles.y == 180)
                     {
@@ -245,20 +248,21 @@ public class wolf : MonoBehaviour
 
                     if (times[3] > 1.5f)
                     {
-                        dashSpeed = 0.2f;
+                        dashSpeed = 0.13f;
                     }
 
-                    ray = new Ray(new Vector3(transform.position.x + 2.3f, transform.position.y, transform.position.z), new Vector3(1, 0.8f, 0));
+                    //障害物飛び越えるためのソース
+                    //ray = new Ray(new Vector3(transform.position.x + 2.3f, transform.position.y, transform.position.z), new Vector3(1, 0.8f, 0));
 
-                    Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
+                    //Debug.DrawRay(ray.origin, ray.direction * infinite, Color.yellow);
 
-                    if (Physics.Raycast(ray, out hit, infinite))
-                    {
-                        if (hit.collider.tag == "bloak")
-                        {
-                            rigid.AddForce(transform.up * jump);
-                        }
-                    }
+                    //if (Physics.Raycast(ray, out hit, infinite))
+                    //{
+                    //    if (hit.collider.tag == "bloak")
+                    //    {
+                    //        rigid.AddForce(transform.up * jump);
+                    //    }
+                    //}
 
                     if (transform.localRotation.eulerAngles.y == 0)
                     {

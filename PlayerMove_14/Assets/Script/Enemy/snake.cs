@@ -33,8 +33,7 @@ public class snake : MonoBehaviour
     public float[] times = new float[5];
 
     public bool hit;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
