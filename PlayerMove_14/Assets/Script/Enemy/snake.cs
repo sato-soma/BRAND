@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boar : MonoBehaviour
+public class snake : MonoBehaviour
 {
     private Rigidbody rigid;
 
@@ -34,6 +34,7 @@ public class boar : MonoBehaviour
 
     public bool hit;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +46,7 @@ public class boar : MonoBehaviour
 
         hit = false;
 
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             times[i] = 0;
         }
@@ -64,21 +65,8 @@ public class boar : MonoBehaviour
         EnemyTargetOff();
 
         EnemyTargetOn();
-
-        if (pos.y < posFall)
-        {
-            gameObject.SetActive(false);
-            pos.y = posFall;
-        }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            pos.y = posSave.y;
-            gameObject.SetActive(true);
-        }
-
     }
-
+    
     //視覚範囲入ってない時、通常移動
     private void EnemyTargetOff()
     {
@@ -221,10 +209,9 @@ public class boar : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //これプレイヤーにつけてHP管理する
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             hit = true;
         }
     }
-
 }
