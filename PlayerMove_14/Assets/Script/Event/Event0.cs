@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class Event1 : MonoBehaviour
+public class Event0 : MonoBehaviour
 {
-    public static bool Event_1Flag = false;
+    public static bool Event_0Flag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,24 +16,26 @@ public class Event1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Event_1Flag == true)
+        if (Event_0Flag == true)
         {
-            if (PlayerState.Event1EndFlag == false)
+            if (PlayerState.Event0EndFlag == false)
             {
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetButton("Event"))
                 {
-                    SceneManager.LoadScene("event1");
-                    PlayerState.Event1EndFlag = true;
+                    SceneManager.LoadScene("event0");
+                    PlayerState.Event0EndFlag = true;
                 }
             }
         }
-    }       
+
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Event_1Flag = true;
+            Event_0Flag = true;
         }
     }
 
@@ -42,8 +43,7 @@ public class Event1 : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Event_1Flag = false;
-            Event1Image.StopTime1 = false;
+            Event_0Flag = false;        
         }
     }
 }

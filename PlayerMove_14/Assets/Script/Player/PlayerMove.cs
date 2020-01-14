@@ -8,7 +8,8 @@ public class PlayerMove : MonoBehaviour
 
     public GameObject Player;
 
-    public static Vector3 PlayerPositioned; //シーン以降前のPlayerの位置保存用
+    public static Vector3 PlayerPositioned0; //シーン0以降前のPlayerの位置保存用
+    public static Vector3 PlayerPositioned1; //シーン1以降前のPlayerの位置保存用
 
     private Vector3 Velocity = Vector3.zero;
 
@@ -40,7 +41,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       
+        
+
         // 移動
         Velocity = Vector3.zero;
 
@@ -85,7 +87,8 @@ public class PlayerMove : MonoBehaviour
             if (jumpFlag == true)
             {
                 //ジャンプ中の左右移動をゆっくりにしている。
-                Velocity = Velocity.normalized * (Speed / 1.5f) * Time.deltaTime;
+                Velocity = Velocity.normalized * (Speed / 1.25f) * Time.deltaTime;
+                
             }
             else
             {
@@ -97,7 +100,8 @@ public class PlayerMove : MonoBehaviour
             if (Velocity.magnitude > 0) 
             {
                 transform.position += Velocity;
-                PlayerPositioned = transform.position;
+                PlayerPositioned0 = transform.position;
+                PlayerPositioned1 = transform.position;
             }
             else
             {

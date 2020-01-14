@@ -13,16 +13,18 @@ public class Movestone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ReturmGame.RestartFlag1 == true)
+        if (ReturmGame.RestartFlag0 == true)
         {
-            if (transform.position.y < 15)
+            if (transform.position.y < 6)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + 0.02f, transform.position.z);
             }
             else
             {
-                ReturmGame.RestartFlag1 = false;
+                ReturmGame.RestartFlag0 = false;
             }
         }
+
+       
     }
 }
