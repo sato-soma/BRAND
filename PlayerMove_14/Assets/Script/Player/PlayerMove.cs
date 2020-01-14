@@ -41,8 +41,6 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-
         // 移動
         Velocity = Vector3.zero;
 
@@ -52,11 +50,9 @@ public class PlayerMove : MonoBehaviour
             if (R_MoveFlag == true || L_MoveFlag == true)
             {
                 Speed = MoveSpeed;
-
-
+                
                 anim.SetFloat("Speed", 5.0f);
                 
-
                 if (R_MoveFlag == true)
                 {                  
                     Velocity.x += Speed;                
