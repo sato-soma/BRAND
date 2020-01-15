@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class crow : MonoBehaviour
+public class griffon : MonoBehaviour
 {
     public GameObject player;
 
     private Rigidbody rigid;
+
     private Vector3 pos;
 
     public float posY;
@@ -18,6 +19,8 @@ public class crow : MonoBehaviour
     public float dis;
 
     public bool[] confirmation = new bool[2];
+
+    public bool[] tarn = new bool[2];
 
     public bool hit;
 
@@ -36,6 +39,8 @@ public class crow : MonoBehaviour
 
         confirmation[0] = confirmation[1] = false;
 
+        tarn[0] = tarn[1] = false;
+
         hit = false;
 
         for (int i = 0; i < 5; i++)
@@ -50,8 +55,8 @@ public class crow : MonoBehaviour
         dis = Vector3.Distance(player.transform.position, transform.position);
 
         EnemyNomal();
+        
     }
-
     private void EnemyNomal()
     {
         if (hit == true)
@@ -77,12 +82,22 @@ public class crow : MonoBehaviour
                 times[0] += 1.0f / 60.0f;
 
                 pos = transform.position;
-                pos.x -= speed;
+
+                if (tarn[0] == false)
+                {
+                    pos.x -= speed;
+                }
+
+                if (tarn[0] == true)
+                {
+                    pos.x += speed;
+                }
+
                 pos.y -= down;
                 transform.position = pos;
             }
 
-            if (times[0] > 2)
+            if (times[0] > 3)
             {
                 times[0] = -1;
                 times[1] = 0;
@@ -103,7 +118,7 @@ public class crow : MonoBehaviour
                     transform.position = pos;
                 }
 
-                if (times[1] > 4)
+                if (times[1] > 5)
                 {
                     times[1] = -1;
 
@@ -126,12 +141,21 @@ public class crow : MonoBehaviour
                 times[2] += 1.0f / 60.0f;
 
                 pos = transform.position;
-                pos.x -= speed;
+
+                if (tarn[1] == false)
+                {
+                    pos.x -= speed;
+                }
+
+                if (tarn[1] == true)
+                {
+                    pos.x += speed;
+                }
                 pos.y += up;
                 transform.position = pos;
             }
 
-            if (times[2] > 2)
+            if (times[2] > 3)
             {
                 times[1] = 0;
                 times[2] = -1;
@@ -139,15 +163,8 @@ public class crow : MonoBehaviour
                 confirmation[0] = false;
                 confirmation[1] = true;
             }
+            
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //これプレイヤーにつけてHP管理する
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            hit = true;
-        }
-    }
+    
 }
