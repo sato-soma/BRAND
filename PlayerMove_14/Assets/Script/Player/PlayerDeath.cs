@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -60,10 +61,19 @@ public class PlayerDeath : MonoBehaviour
 
     void PlayerDrop() //ステージから落ちたか
     {
-        //一定以上落ちたら
-        if (Player.transform.position.y < Stage1Y_Min)
-        {
-            DeathFlag = true;
+        if (SceneManager.GetActiveScene().name == "playerMove")
+        {//一定以上落ちたら
+            if (Player.transform.position.y < Stage1Y_Min)
+            {
+                DeathFlag = true;
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "stage2")
+        {//一定以上落ちたら
+            if (Player.transform.position.y < Stage2Y_Min)
+            {
+                DeathFlag = true;
+            }
         }
     }
 

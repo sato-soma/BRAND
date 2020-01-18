@@ -400,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495417003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.04, y: 2.31, z: 0.25}
+  m_LocalPosition: {x: -18.9, y: -12.5, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1203825529}
@@ -741,6 +741,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925ae4aed6d067a41a69737fdce778ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventPosition:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &900459986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,7 +778,8 @@ MonoBehaviour:
   Player: {fileID: 900459983}
   StartPoint: {fileID: 1028164129}
   MidPoint: {fileID: 495417003}
-  StageY_Min: -12
+  Stage1Y_Min: 0
+  Stage2Y_Min: -30
 --- !u!136 &900459988
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -812,7 +818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900459983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -128.8, y: 6, z: 0}
+  m_LocalPosition: {x: -128.8, y: -3.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1456534753}
@@ -923,7 +929,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 5, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1028164131
 Transform:
   m_ObjectHideFlags: 0
@@ -932,7 +938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028164129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -133, y: 2.5, z: -0.2763848}
+  m_LocalPosition: {x: -133, y: -2.32, z: -0.2763848}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 225307607}
@@ -1659,6 +1665,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CaveC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842674821164198330, guid: b0b788c573af7c845a8ee9d11192f37e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005986127924209638, guid: b0b788c573af7c845a8ee9d11192f37e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grand
+      objectReference: {fileID: 0}
+    - target: {fileID: -6099910807773808000, guid: b0b788c573af7c845a8ee9d11192f37e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grand
+      objectReference: {fileID: 0}
+    - target: {fileID: -4708264401780213659, guid: b0b788c573af7c845a8ee9d11192f37e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grand
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b0b788c573af7c845a8ee9d11192f37e,
         type: 3}
