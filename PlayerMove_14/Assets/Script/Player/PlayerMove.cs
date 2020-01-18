@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
 
-        Debug.Log(PlayerDeath.HitCount);
+        //Debug.Log(transform.position);
 
         // 移動
         Velocity = Vector3.zero;

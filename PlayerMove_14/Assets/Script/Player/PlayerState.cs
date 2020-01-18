@@ -34,6 +34,20 @@ public class PlayerState : MonoBehaviour
             //イベント以降前のポジションにワープ
             transform.position = EventPosition[1].transform.position;
         }
+
+        // ステージ2の1つ目のイベントから戻ってきたら
+        if (ReturmGame.RestartFlag[2] == true)
+        {
+            //イベント以降前のポジションにワープ
+            transform.position = EventPosition[2].transform.position;
+        }
+
+        // ステージ2の2つ目のイベントから戻ってきたら
+        if (ReturmGame.RestartFlag[3] == true)
+        {
+            //イベント以降前のポジションにワープ
+            transform.position = EventPosition[3].transform.position;
+        }
     }
 
     //当たったら

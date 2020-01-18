@@ -2796,7 +2796,7 @@ MonoBehaviour:
   Player: {fileID: 1004827025}
   StartPoint: {fileID: 571199529}
   MidPoint: {fileID: 1752539637}
-  Stage1Y_Min: 0
+  Stage1Y_Min: -12
   Stage2Y_Min: 0
 --- !u!136 &1004827028
 CapsuleCollider:
@@ -6096,7 +6096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752539637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.04, y: 2.31, z: 0.25}
+  m_LocalPosition: {x: 100.04, y: 2.5, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2055075102}
@@ -6161,7 +6161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753638714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.34, y: 1.91, z: 0}
+  m_LocalPosition: {x: 19.4, y: 1.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2006932519}
