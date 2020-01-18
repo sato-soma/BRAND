@@ -11,7 +11,7 @@ public class Event1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,16 +19,16 @@ public class Event1 : MonoBehaviour
     {
         if (Event_1Flag == true)
         {
-            if (PlayerState.Event1EndFlag == false)
+            if (PlayerState.EventEndFlag[1] == false)
             {
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetButton("Event"))
                 {
                     SceneManager.LoadScene("event1");
-                    PlayerState.Event1EndFlag = true;
+                    PlayerState.EventEndFlag[1] = true;
                 }
             }
         }
-    }       
+    }
 
     private void OnTriggerEnter(Collider other)
     {

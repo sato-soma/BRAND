@@ -15,12 +15,10 @@ public class Event0Image : MonoBehaviour
     public float EventImage2 = 6;
     public float EventImage3 = 3;
 
-    //private int i = 0;
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -33,8 +31,6 @@ public class Event0Image : MonoBehaviour
             Event0ImageTime -= 1.0f / 60.0f;
         }
 
-        Debug.Log(Event0ImageTime);
-
         //Event1ImageTimeを減らしていき一定以下になったらSpriteを消す
         if (Event0ImageTime < EventImage0)
         {
@@ -46,7 +42,7 @@ public class Event0Image : MonoBehaviour
             transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
             transform.GetChild(2).gameObject.SetActive(true);
         }
-        if(Event0ImageTime < EventImage2)
+        if (Event0ImageTime < EventImage2)
         {
             transform.GetChild(2).gameObject.SetActive(false); //Spriteを消す
             transform.GetChild(3).gameObject.SetActive(true);

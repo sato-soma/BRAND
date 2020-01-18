@@ -13,7 +13,7 @@ public class Movestone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ReturmGame.RestartFlag0 == true)
+        if (ReturmGame.RestartFlag[0] == true)
         {
             if (transform.position.y < 6)
             {
@@ -21,10 +21,10 @@ public class Movestone : MonoBehaviour
             }
             else
             {
-                ReturmGame.RestartFlag0 = false;
+                ReturmGame.RestartFlag[0] = false;
             }
         }
 
-       
+
     }
 }

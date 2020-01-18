@@ -4,68 +4,43 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-    private float ReStartPos0X = ReturmGame.PlayerRestartPosition0.x;
-    private float ReStartPos0Y = ReturmGame.PlayerRestartPosition0.y;
-    private float ReStartPos0Z = ReturmGame.PlayerRestartPosition0.z;
-
-    private float ReStrartPos1X = ReturmGame.PlayerRestartPosition1.x;
-    private float ReStrartPos1Y = ReturmGame.PlayerRestartPosition1.y;
-    private float ReStrartPos1Z = ReturmGame.PlayerRestartPosition1.z;
-   
-
-
     public static bool EnemyHit = false;
-    public static bool MidPointFlag = false;
-    private bool Event1Time = false;
-    private bool Event0Time = false;
-    public static bool Event1EndFlag = false; //他の所で使っている
-    public static bool Event0EndFlag = false; //他の所で使っている
+    public static bool MidPointFlag = false; //中間ポイントを通ったか
+
+    public static bool[] EventEndFlag = new bool[4]; //他の所で使っている: イベントが見終わっているか
+
+    public GameObject[] EventPosition = new GameObject[4]; //イベント見た後の復帰地点
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // イベント1から戻ってきたら
-        if (ReturmGame.RestartFlag1 == true)
-        {
-            Event1Time = true;
-        }
-
-        // イベント0から戻ってきたら
-        if (ReturmGame.RestartFlag0 == true)
-        {
-            Event0Time = true;
-        }
-
-
-        if (Event0Time == true)
+        // ステージ1の一つ目のイベントから戻ってきたら
+        if (ReturmGame.RestartFlag[0] == true)
         {
             //イベント以降前のポジションにワープ
-            transform.position = new Vector3(ReStartPos0X, ReStartPos0Y, ReStartPos0Z);
-            Event0Time = false;
+            transform.position = EventPosition[0].transform.position;
         }
 
-
-        if(Event1Time==true)
+        // ステージ1の2つ目のイベントから戻ってきたら
+        if (ReturmGame.RestartFlag[1] == true)
         {
             //イベント以降前のポジションにワープ
-            transform.position = new Vector3(ReStrartPos1X, ReStrartPos1Y, ReStrartPos1Z);
-            Event1Time = false;
-           
+            transform.position = EventPosition[1].transform.position;
         }
     }
 
     //当たったら
-    private void OnCollisionEnter(Collision collision) 
+    private void OnCollisionEnter(Collision collision)
     {
         //敵と当たったら
-        if (collision.gameObject.CompareTag("Enemy")) 
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             if (EnemyHit == false)
             {
@@ -75,43 +50,39 @@ public class PlayerState : MonoBehaviour
     }
 
     //敵と離れたら
-    private void OnCollisionExit(Collision collision) 
+    private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) 
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             EnemyHit = false;
         }
-
-       
     }
 
     //当たったら
-    private void OnTriggerEnter(Collider collision) 
+    private void OnTriggerEnter(Collider collision)
     {
         //中間ポイントにきたら
-        if (collision.gameObject.CompareTag("MidPoint")) 
+        if (collision.gameObject.CompareTag("MidPoint"))
         {
             MidPointFlag = true;
         }
 
         //一つ目の橋にきたら
-        if (collision.gameObject.CompareTag("BridgeStart")) 
+        if (collision.gameObject.CompareTag("BridgeStart"))
         {
             FallingFloor.PassFlag = true;
         }
 
         //二つ目の橋にきたら
-        if (collision.gameObject.CompareTag("BridgeStart2")) 
-        {
-            LongFallingFloor.LongPassFlag = true;
-        }
-        
-
+        //if (collision.gameObject.CompareTag("BridgeStart2")) 
+        //{
+        //    LongFallingFloor.LongPassFlag = true;
+        //}
     }
 
     //離れたら
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerExit(Collider other)
     {
-       
+
     }
 }

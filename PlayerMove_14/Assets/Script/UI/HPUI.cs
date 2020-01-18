@@ -13,11 +13,11 @@ public class HPUI : MonoBehaviour
 
     public Vector3 Pos;
     private Vector3 HpUiPosition;
-    public static Vector3 HpUiPositionOld; 
-    
-    public static int  HitCount;
+    public static Vector3 HpUiPositionOld;
+
+    public static int HitCount;
     public int HitCuntMax = 2;
-   
+
 
     public static bool HitPoint0 = false;
 
@@ -26,8 +26,8 @@ public class HPUI : MonoBehaviour
     {
         // HitCount = HitCuntMax;
 
-        HpUiPosition.x = 4.5f; //とりあえずいい感じの位置
-        HpUiPosition.y = 2.0f; //
+        //HpUiPosition.x = 4.5f; //とりあえずいい感じの位置
+        //HpUiPosition.y = 2.0f; //
 
     }
 
@@ -35,72 +35,68 @@ public class HPUI : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(HitCount);
+        //Debug.Log(HitCount);
 
-        LifeCount();
+        //LifeCount();
 
-        Pos.x = Player.transform.position.x;
-        Pos.y = Player.transform.position.y;
+        //Pos.x = Player.transform.position.x;
+        //Pos.y = Player.transform.position.y;
 
-        if (ReturmGame.RestartFlag1 == false) //イベント中じゃなかったら
-        {
-            transform.position = HpUiPosition + Pos;
-            //transform.position = Pos;
-            HpUiPositionOld = transform.position;
-        }
-        else
-        {
-            HpUiPositionOld = new Vector3(ReturmGame.HpUiRestartPosition.x, ReturmGame.HpUiRestartPosition.y, 0.0f);
-            transform.position = new Vector3(HpUiPositionOld.x, HpUiPositionOld.y, 0.0f);
-            HitCount = ReturmGame.HpResutartCount;
-            transform.GetChild(HitCount).gameObject.SetActive(false);
-        }
+        //if (ReturmGame.RestartFlag1 == false) //イベント中じゃなかったら
+        //{
+        //    transform.position = HpUiPosition + Pos;
+        //    //transform.position = Pos;
+        //    HpUiPositionOld = transform.position;
+        //}
+        //else
+        //{
+        //   // HpUiPositionOld = new Vector3(ReturmGame.HpUiRestartPosition.x, ReturmGame.HpUiRestartPosition.y, 0.0f);
+        //    transform.position = new Vector3(HpUiPositionOld.x, HpUiPositionOld.y, 0.0f);
+        //   // HitCount = ReturmGame.HpResutartCount;
+        //    transform.GetChild(HitCount).gameObject.SetActive(false);
+        //}
 
-        
-        if (HitPoint0 == true || PlayerDeath.DeathFlag == true) 
-        {
-            Pos.x = HpUiPosition.x + Player.transform.position.x;
-            Pos.y = HpUiPosition.y + Player.transform.position.y;
 
-            if (PlayerState.MidPointFlag == true)
-            {
-                transform.position = HpUiPosition + Pos + MidPoint.transform.position;
-            }
-            else
-            {
-                transform.position = HpUiPosition + Pos + StartPoint.transform.position;
-            }
+        //if (HitPoint0 == true || PlayerDeath.DeathFlag == true)
+        //{
+        //    Pos.x = HpUiPosition.x + Player.transform.position.x;
+        //    Pos.y = HpUiPosition.y + Player.transform.position.y;
 
-            HitCount = HitCuntMax;
+        //    if (PlayerState.MidPointFlag == true)
+        //    {
+        //        transform.position = HpUiPosition + Pos + MidPoint.transform.position;
+        //    }
+        //    else
+        //    {
+        //        transform.position = HpUiPosition + Pos + StartPoint.transform.position;
+        //    }
 
-            transform.GetChild(HitCuntMax - 1).gameObject.SetActive(true);
+        //    HitCount = HitCuntMax;
 
-            HitPoint0 = false;
+        //    transform.GetChild(HitCuntMax - 1).gameObject.SetActive(true);
 
-        }
+        //    HitPoint0 = false;
+
+        //}
     }
 
-    
     private void LifeCount()
     {
-        
-        if (PlayerState.EnemyHit == true) //敵と当たったら
-        {
-            HitCount -= 1;
 
-            transform.GetChild(HitCount).gameObject.SetActive(false); //Spriteを消す
+        //if (PlayerState.EnemyHit == true) //敵と当たったら
+        //{
+        //    HitCount -= 1;
 
-            PlayerState.EnemyHit = false;
-        }
+        //    transform.GetChild(HitCount).gameObject.SetActive(false); //Spriteを消す
 
-        if (HitCount == 0) //HPが0になったら
-        {
-            HitPoint0 = true;
-            PlayerDeath.DeathFlag = true;
+        //    PlayerState.EnemyHit = false;
+        //}
 
-          
-            
-        }
+        //if (HitCount == 0) //HPが0になったら
+        //{
+        //    HitPoint0 = true;
+        //    PlayerDeath.DeathFlag = true;
+        //}
     }
 
 }

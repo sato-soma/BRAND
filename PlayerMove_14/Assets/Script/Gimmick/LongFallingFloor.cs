@@ -28,18 +28,17 @@ public class LongFallingFloor : MonoBehaviour
 
     void Start()
     {
-        for(int j=0; j < Value; j++)
+        for (int j = 0; j < Value; j++)
         {
             GetChildPosition[j] = transform.GetChild(j).gameObject.transform.position;
             GetStartPos[j] = transform.GetChild(j).gameObject.transform.position;
 
             // 最初に消しとく
             transform.GetChild(j).gameObject.SetActive(false);
-        }   
+        }
     }
     void Update()
     {
-        
 
         //// 死んだら
         if (PlayerHP.FadeIn == true)
@@ -50,9 +49,16 @@ public class LongFallingFloor : MonoBehaviour
                 GetChildPosition[i] = GetStartPos[i];
                 transform.GetChild(i).gameObject.SetActive(false);
             }
+
             Count = 0;
-            LongPassFlag = false;
+
+            if (PlayerState.EventEndFlag[1] == true) //一回イベントを見ていたら橋を表示
+            {
+                LongPassFlag = true;
+            }
         }
+
+
 
         // イベント後
         if (LongPassFlag == true)
@@ -65,14 +71,15 @@ public class LongFallingFloor : MonoBehaviour
                 Count++;
                 CountTime = CountTimeMax;
             }
-
         }
 
         if (Count > MaxValue)
         {
             LongPassFlag = false;
-            ReturmGame.RestartFlag1 = false;
+            ReturmGame.RestartFlag[1] = false;
             Count = 0;
         }
+
     }
 }
+
