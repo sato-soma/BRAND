@@ -99,7 +99,7 @@ public class wolf : MonoBehaviour
             
             if (dis >= searchOff && hits == false)
             {
-                anim.SetFloat("Speed", 0.07f);
+                anim.SetFloat("Speed", 0.06f);
 
                 times[2] = 0;
                 times[3] = 0;
@@ -158,9 +158,9 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    if (transform.localRotation.eulerAngles.y == -180)
+                    if (transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, 180f);
+                        transform.Rotate(Vector3.up, -180f);
                     }
 
                     pos = transform.position;
@@ -233,9 +233,9 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    if (transform.localRotation.eulerAngles.y == 180)
+                    if (transform.localRotation.eulerAngles.y == 0)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        transform.Rotate(Vector3.up, 180f);
                     }
 
                     pos = transform.position;
@@ -273,9 +273,9 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    if (transform.localRotation.eulerAngles.y == 0)
+                    if (transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, 180f);
+                        transform.Rotate(Vector3.up, -180f);
                     }
                     pos = transform.position;
                     pos.x += move.x * dashSpeed;
