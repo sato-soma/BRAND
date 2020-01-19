@@ -185,7 +185,7 @@ public class boar : MonoBehaviour
 
                     if (times[2] > 2)
                     {
-                        anim.SetFloat("Speed", 0.15f);
+                        anim.SetFloat("Speed", 5.0f);
                         dashSpeed = 0.15f;
                     }
 
@@ -212,7 +212,7 @@ public class boar : MonoBehaviour
 
                     if (times[3] > 2)
                     {
-                        anim.SetFloat("Speed", 0.15f);
+                        anim.SetFloat("Speed", 5.0f);
                         dashSpeed = 0.15f;
                     }
 
