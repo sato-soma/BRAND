@@ -110,7 +110,7 @@ public class wolf : MonoBehaviour
                     times[1] = -1;
                     times[0] += 1.0f / 60f;
 
-                    if (transform.localRotation.eulerAngles.y == 90 || transform.localRotation.eulerAngles.y == 0)
+                    if (transform.localRotation.eulerAngles.y == 0)
                     {
                         transform.Rotate(Vector3.up, -180f);
                     }
@@ -158,9 +158,9 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    if (transform.localRotation.eulerAngles.y == -90)
+                    if (transform.localRotation.eulerAngles.y == -180)
                     {
-                        transform.Rotate(Vector3.up, 90f);
+                        transform.Rotate(Vector3.up, 180f);
                     }
 
                     pos = transform.position;
