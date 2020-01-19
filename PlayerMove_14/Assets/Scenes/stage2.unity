@@ -1314,7 +1314,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7ef0d07820a44a74393d066b9dfa3a42,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -128.8
+      value: -122.8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7ef0d07820a44a74393d066b9dfa3a42,
         type: 3}
@@ -2176,11 +2176,28 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!114 &1994470582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994470579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5277a98faf02e42b6912878b81da00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 900459983}
+  dis: 0
+  search: 24
+  hit: 0
+  posFall: -35
 --- !u!1001 &2066198085
 PrefabInstance:
   m_ObjectHideFlags: 0
