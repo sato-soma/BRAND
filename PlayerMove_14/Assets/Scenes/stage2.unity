@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 900459983}
-  Jump: 400
+  Jump: 600
   MoveSpeed: 3
   RanSpeed: 8
   anim: {fileID: 0}
@@ -1760,20 +1760,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: CaveC
       objectReference: {fileID: 0}
-    - target: {fileID: 6842674821164198330, guid: b0b788c573af7c845a8ee9d11192f37e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Grand
-      objectReference: {fileID: 0}
-    - target: {fileID: 7005986127924209638, guid: b0b788c573af7c845a8ee9d11192f37e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Grand
-      objectReference: {fileID: 0}
     - target: {fileID: -6099910807773808000, guid: b0b788c573af7c845a8ee9d11192f37e,
         type: 3}
       propertyPath: m_TagString
       value: Grand
+      objectReference: {fileID: 0}
+    - target: {fileID: -4807519139325597924, guid: b0b788c573af7c845a8ee9d11192f37e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: -4708264401780213659, guid: b0b788c573af7c845a8ee9d11192f37e,
         type: 3}
@@ -1849,6 +1844,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842674821164198330, guid: b0b788c573af7c845a8ee9d11192f37e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005986127924209638, guid: b0b788c573af7c845a8ee9d11192f37e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b788c573af7c845a8ee9d11192f37e, type: 3}
