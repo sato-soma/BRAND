@@ -609,6 +609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raven_FlyP (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eb1ee0250ea874d41911cbeb80a5c5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: eb1ee0250ea874d41911cbeb80a5c5e1,
         type: 3}
       propertyPath: m_Controller
@@ -1318,7 +1323,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7bc35e3101351154ba391c8d59825bf2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.72
+      value: 31.82
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7bc35e3101351154ba391c8d59825bf2,
         type: 3}
@@ -5707,8 +5712,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.05
-  dashSpeed: 0.24
+  speed: 0.03
+  dashSpeed: 0.2
   searchOn: 10
   searchOff: 10
   dis: 0
@@ -6956,6 +6961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raven_FlyP (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eb1ee0250ea874d41911cbeb80a5c5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: eb1ee0250ea874d41911cbeb80a5c5e1,
         type: 3}
       propertyPath: m_Controller
@@ -7049,6 +7059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Raven_FlyP
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eb1ee0250ea874d41911cbeb80a5c5e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: eb1ee0250ea874d41911cbeb80a5c5e1,
         type: 3}
