@@ -288,6 +288,7 @@ public class wolf : MonoBehaviour
         //これプレイヤーに当たった時止まる
         if (collision.gameObject.CompareTag("Player"))
         {
+            anim.SetFloat("Speed", 0.06f);
             hits = true;
         }
     }
