@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fallIcicles : MonoBehaviour
+public class follRock : MonoBehaviour
 {
     private Rigidbody rigid;
 
@@ -24,7 +24,7 @@ public class fallIcicles : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
 
-        pos = gameObject.transform.position;
+        pos = transform.position;
 
         posSave = pos;
 
@@ -34,38 +34,33 @@ public class fallIcicles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //プレイヤーと落石の距離の範囲の数値と比較
-        dis = Vector3.Distance(player.transform.position, gameObject.transform.position);
+        //プレイヤーと落石の距離が視覚範囲の数値と比較
+        dis = Vector3.Distance(player.transform.position, transform.position);
 
-        pos = gameObject.transform.position;
+        pos = transform.position;
 
         if (hit == false)
         {
-            //範囲内に入ったら落下
+            //範囲外に出たら落下
             if (dis < search)
+            {
+                rigid.useGravity = false;
+            }
+            else
             {
                 hit = true;
                 rigid.useGravity = true;
             }
         }
 
-        //落ちてくるつららが指定した数値より下だった場合、元の位置に戻る
-        if (pos.y < posFall)
+        //転がる岩が指定した数値より下だった場合、元の位置に戻る
+        if(pos.y < posFall)
         {
-            rigid.isKinematic = true;
             rigid.useGravity = false;
-            transform.gameObject.SetActive(false);
+            hit = false;
             pos = posSave;
         }
 
-        if (PlayerHP.FadeIn == true)
-        {
-            rigid.isKinematic = false;
-            transform.gameObject.SetActive(true);
-            hit = false;
-        }
-
-        gameObject.transform.position = pos;
+        transform.position = pos;
     }
 }
-

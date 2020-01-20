@@ -10,7 +10,6 @@ TagManager:
   - BridgeStart
   - BridgeEnd
   - BridgeStart2
-  - Blow
   layers:
   - Default
   - TransparentFX

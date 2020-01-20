@@ -78,7 +78,7 @@ public class boar : MonoBehaviour
 
         if (PlayerHP.FadeIn == true)
         {
-            pos = posSave;
+            pos.y = posSave.y;
             gameObject.SetActive(true);
         }
 
