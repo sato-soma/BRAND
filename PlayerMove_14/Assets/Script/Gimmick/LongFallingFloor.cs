@@ -23,7 +23,7 @@ public class LongFallingFloor : MonoBehaviour
     private int Value = 18;
     private int MaxValue = 17;
 
-    private float CountTime = 0.0f;
+    public float CountTime = 0.0f;
     private float CountTimeMax = 0.2f;
 
     void Start()
@@ -64,7 +64,7 @@ public class LongFallingFloor : MonoBehaviour
         if (LongPassFlag == true)
         {
             transform.GetChild(Count).gameObject.SetActive(true);
-            CountTime -= 1.0f / 60.0f;
+            CountTime -= Time.deltaTime;
 
             if (CountTime < 0)
             {

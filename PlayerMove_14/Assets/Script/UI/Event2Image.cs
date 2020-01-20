@@ -24,7 +24,7 @@ public class Event2Image : MonoBehaviour
 
         if (StopTime2 == false) //カウントが止まってないなら
         {
-            Event2ImageTime -= 1.0f / 60.0f;
+            Event2ImageTime -= Time.deltaTime;
         }
 
         //Event1ImageTimeを減らしていき一定以下になったらSpriteを消す

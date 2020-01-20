@@ -472,8 +472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a325ad1c47b61245bf99ec5f8f7dc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objTarget: {fileID: 900459983}
+  CameraTarget: {fileID: 900459983}
   offset: {x: 0, y: 3, z: -10}
+  MaxXposition: 123
 --- !u!81 &63924864
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3404,7 +3405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900459983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -128.8, y: -1.6, z: 0}
+  m_LocalPosition: {x: 120, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1456534753}

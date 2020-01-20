@@ -4,30 +4,34 @@ using System.Collections;
 public class camera : MonoBehaviour
 {
 
-    public GameObject objTarget;
-    public Vector3 offset;
-    private Vector3 pos;
+    public GameObject CameraTarget; //カメラが追尾するオブジェクト
+    public Vector3 offset; //追尾するオブジェクトとの距離
+    private Vector3 pos; //カメラのポジション
+
+    public float MaxXposition; //どこまで追尾するか
 
     void Start()
     {
         updatePostion();
-        pos.y = objTarget.transform.localPosition.y;
+        pos.y = CameraTarget.transform.localPosition.y;
     }
 
     void LateUpdate()
     {
-        updatePostion();
+        if (CameraTarget.transform.position.x < MaxXposition)
+        {
+            updatePostion();
+        }
+
+       
     }
 
     void updatePostion()
     {
-        pos.x = objTarget.transform.localPosition.x;
-        pos.y = objTarget.transform.localPosition.y;
-        pos.z = objTarget.transform.localPosition.z;
-
-         
-        
-        
+        pos.x = CameraTarget.transform.localPosition.x;
+        pos.y = CameraTarget.transform.localPosition.y;
+        pos.z = CameraTarget.transform.localPosition.z;
+      
         transform.localPosition = pos + offset;
     }
 }

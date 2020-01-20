@@ -25,34 +25,32 @@ public class Event1Image : MonoBehaviour
         ResetImage(); //画像を非表示
 
         if (StopTime1 == false) //カウントが止まってないなら
-        {
-            Event1ImageTime -= 1.0f / 60.0f;
+        {          
+            Event1ImageTime -= Time.deltaTime;
         }
 
         //Event1ImageTimeを減らしていき一定以下になったらSpriteを消す
         if (Event1ImageTime < EventDisplayTime * 3)
         {
-            StopTime1 = true;
-            Event1ImageTime = MaxTime;
-            /*
+
             transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
             transform.GetChild(1).gameObject.SetActive(true);
-            */
+
         }
         if (Event1ImageTime < EventDisplayTime * 2)
         {
-            /*
+
             transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
             transform.GetChild(2).gameObject.SetActive(true);
-            */
+
         }
         if (Event1ImageTime < EventDisplayTime)
         {
-            /*
+
             StopTime1 = true;
             transform.GetChild(2).gameObject.SetActive(true);
             Event1ImageTime = MaxTime;
-            */
+
         }
     }
 

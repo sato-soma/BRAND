@@ -18,7 +18,7 @@ public class ReturmGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {      
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetButton("Event") || 
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("Event") || 
             Event0Image.StopTime0 == true ||Event1Image.StopTime1==true || 
             Event2Image.StopTime2 == true || Event3Image.StopTime3 == true)
         {
