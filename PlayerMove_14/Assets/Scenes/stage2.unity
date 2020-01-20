@@ -283,8 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.01
-  dashSpeed: 0.05
+  speed: 1
+  dashSpeed: 3
   searchOn: 0
   searchOff: 0
   times:
@@ -3691,8 +3691,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.01
-  dashSpeed: 0.05
+  speed: 1
+  dashSpeed: 3
   searchOn: 0
   searchOff: 0
   times:

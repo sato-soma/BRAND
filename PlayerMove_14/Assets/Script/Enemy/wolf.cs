@@ -78,15 +78,12 @@ public class wolf : MonoBehaviour
 
         if (pos.y < posFall)
         {
-            gameObject.SetActive(false);
-
-            pos.y = posFall;
+            pos = posSave;
         }
 
         if (PlayerHP.FadeIn == true)
         {
-            pos.y = posSave.y;
-            gameObject.SetActive(true);
+            pos = posSave;
         }
 
     }
@@ -129,7 +126,7 @@ public class wolf : MonoBehaviour
                     //}
 
                     pos = transform.position;
-                    pos.x -= speed;
+                    pos.x -= speed * Time.deltaTime;
                     transform.position = pos;
                 }
 
@@ -164,7 +161,7 @@ public class wolf : MonoBehaviour
                     }
 
                     pos = transform.position;
-                    pos.x += speed;
+                    pos.x += speed * Time.deltaTime;
                     transform.position = pos;
                 }
 
@@ -217,7 +214,7 @@ public class wolf : MonoBehaviour
                     if (times[2] > 1.5f)
                     {
                         anim.SetFloat("Speed", 0.6f);
-                        dashSpeed = 0.13f;
+                        dashSpeed = 7f;
                     }
 
                     //障害物飛び越えるためのソース
@@ -239,7 +236,7 @@ public class wolf : MonoBehaviour
                     }
 
                     pos = transform.position;
-                    pos.x += move.x * dashSpeed;
+                    pos.x += move.x * dashSpeed * Time.deltaTime;
                     transform.position = pos;
                 }
 
@@ -257,7 +254,7 @@ public class wolf : MonoBehaviour
                     if (times[3] > 1.5f)
                     {
                         anim.SetFloat("Speed", 0.6f);
-                        dashSpeed = 0.13f;
+                        dashSpeed = 7f;
                     }
 
                     //障害物飛び越えるためのソース
@@ -278,7 +275,7 @@ public class wolf : MonoBehaviour
                         transform.Rotate(Vector3.up, -180f);
                     }
                     pos = transform.position;
-                    pos.x += move.x * dashSpeed;
+                    pos.x += move.x * dashSpeed * Time.deltaTime;
                     transform.position = pos;
 
                 }

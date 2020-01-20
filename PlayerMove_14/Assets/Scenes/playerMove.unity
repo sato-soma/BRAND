@@ -411,9 +411,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   posY: 2.36
-  speed: 0.05
-  down: 0.01
-  up: 0.01
+  speed: 2
+  down: 0.5
+  up: 0.5
   dis: 0
   confirmation: 0000
   hit: 0
@@ -505,8 +505,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 188226137}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -773,8 +773,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 310334774}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -835,9 +835,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   posY: 2.72
-  speed: 0.05
-  down: 0.01
-  up: 0.01
+  speed: 2
+  down: 0.5
+  up: 0.5
   dis: 0
   confirmation: 0000
   hit: 0
@@ -1715,8 +1715,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 661281720}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -1778,8 +1778,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 667452274}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -1903,9 +1903,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   posY: 2.49
-  speed: 0.05
-  down: 0.01
-  up: 0.01
+  speed: 2
+  down: 0.5
+  up: 0.5
   dis: 0
   confirmation: 0000
   hit: 0
@@ -2567,8 +2567,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 861262773}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -2710,8 +2710,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 927177384}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -3013,7 +3013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004827025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247, y: 2.51, z: -0.25}
+  m_LocalPosition: {x: -13.5, y: 2.51, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1130141835}
@@ -3187,8 +3187,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 1052640063}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -3907,14 +3907,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.03
-  dashSpeed: 0.6
+  speed: 1
+  dashSpeed: 4
   searchOn: 10
   searchOff: 10
   jump: 0
   infinite: 0
   dis: 0
-  posFall: -2
+  posFall: 0
   times:
   - 0
   - 0
@@ -5001,6 +5001,147 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd9e2f9e6a5adf74abb787c6b53c045f, type: 3}
+--- !u!1 &1299727261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1299727263}
+  - component: {fileID: 1299727262}
+  - component: {fileID: 1299727264}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1299727262
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299727261}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d490f9a1baaf4244881d9e75ef84a93d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1299727263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299727261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.4, y: 4.900001, z: -0.109999895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1299727264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299727261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47ff1cfef190221498db5435456c5fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1299727262}
 --- !u!1 &1342117372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,8 +5326,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 1397125764}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -5248,8 +5389,8 @@ MonoBehaviour:
   player: {fileID: 1004827025}
   rabbits: {fileID: 1406557464}
   alpha: {r: 0, g: 0, b: 0, a: 0}
-  speed: 0.05
-  dashSpeed: 0.08
+  speed: 1.5
+  dashSpeed: 4
   posFall: -2
   posFront: 0
   jump: 200
@@ -5504,7 +5645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496398678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.1, y: 2.4000006, z: 0.1663848}
+  m_LocalPosition: {x: -22.6, y: 2.4000006, z: 0.1663848}
   m_LocalScale: {x: 40, y: 40, z: 6.5}
   m_Children: []
   m_Father: {fileID: 571199531}
@@ -5660,12 +5801,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.03
-  dashSpeed: 0.2
+  speed: 2.5
+  dashSpeed: 7
   searchOn: 10
   searchOff: 10
   dis: 0
-  posFall: -2
+  posFall: 0
   times:
   - 0
   - 0
@@ -6228,14 +6369,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1004827025}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.03
-  dashSpeed: 0.6
+  speed: 1
+  dashSpeed: 4
   searchOn: 10
   searchOff: 10
   jump: 0
   infinite: 0
   dis: 0
-  posFall: -2
+  posFall: 0
   times:
   - 0
   - 0

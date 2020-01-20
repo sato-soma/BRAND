@@ -87,7 +87,7 @@ public class rabbit : MonoBehaviour
                 if (dis >= searchOff)
                 {
                     pos = rabbits.transform.position;
-                    pos.x -= speed;
+                    pos.x -= speed * Time.deltaTime;
                     rabbits.transform.position = pos;
                 }
 
@@ -95,7 +95,7 @@ public class rabbit : MonoBehaviour
                 if (dis <= searchOn)
                 {
                     pos = rabbits.transform.position;
-                    pos.x -= dashSpeed;
+                    pos.x -= dashSpeed * Time.deltaTime;
                     rabbits.transform.position = pos;
                 }
 

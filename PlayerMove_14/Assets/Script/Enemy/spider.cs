@@ -74,7 +74,7 @@ public class spider : MonoBehaviour
                 times[0] += 1.0f / 60f;
                 
                 pos = transform.position;
-                pos.y -= speed;
+                pos.y -= speed * Time.deltaTime;
                 transform.position = pos;
             }
 
@@ -91,7 +91,7 @@ public class spider : MonoBehaviour
                 times[1] += 1.0f / 60f;
                 
                 pos = transform.position;
-                pos.y += speed;
+                pos.y += speed * Time.deltaTime;
                 transform.position = pos;
             }
 
@@ -127,11 +127,11 @@ public class spider : MonoBehaviour
 
                 if (times[2] > 2)
                 {
-                    dashSpeed = 0.03f;
+                    dashSpeed = 0.01f;
                 }
                 
                 pos = transform.position;
-                pos.y = move.y * dashSpeed;
+                pos.y = move.y * dashSpeed * Time.deltaTime;
                 transform.position = pos;
             }
 
@@ -147,12 +147,12 @@ public class spider : MonoBehaviour
 
                 if (times[3] > 2)
                 {
-                    dashSpeed = 0.03f;
+                    dashSpeed = 0.01f;
                 }
                 
 
                 pos = transform.position;
-                pos.y += move.y * dashSpeed;
+                pos.y += move.y * dashSpeed * Time.deltaTime;
                 transform.position = pos;
 
             }

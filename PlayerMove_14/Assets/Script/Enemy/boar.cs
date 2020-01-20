@@ -72,14 +72,12 @@ public class boar : MonoBehaviour
 
         if (pos.y < posFall)
         {
-            gameObject.SetActive(false);
-            pos.y = posFall;
+            pos = posSave;
         }
 
         if (PlayerHP.FadeIn == true)
         {
             pos = posSave;
-            gameObject.SetActive(true);
         }
 
     }
@@ -108,7 +106,7 @@ public class boar : MonoBehaviour
                     }
 
                     pos = transform.position;
-                    pos.x -= speed;
+                    pos.x -= speed * Time.deltaTime;
                     transform.position = pos;
                 }
 
@@ -130,7 +128,7 @@ public class boar : MonoBehaviour
                     }
 
                     pos = transform.position;
-                    pos.x += speed;
+                    pos.x += speed * Time.deltaTime;
                     transform.position = pos;
                 }
 
@@ -186,7 +184,7 @@ public class boar : MonoBehaviour
                     if (times[2] > 2)
                     {
                         anim.SetFloat("Speed", 5.0f);
-                        dashSpeed = 0.15f;
+                        dashSpeed = 7f;
                     }
 
                     if (transform.localRotation.eulerAngles.y == 0)
@@ -195,7 +193,7 @@ public class boar : MonoBehaviour
                     }
 
                     pos = transform.position;
-                    pos.x += move.x * dashSpeed;
+                    pos.x += move.x * dashSpeed * Time.deltaTime;
                     transform.position = pos;
                 }
 
@@ -213,7 +211,7 @@ public class boar : MonoBehaviour
                     if (times[3] > 2)
                     {
                         anim.SetFloat("Speed", 5.0f);
-                        dashSpeed = 0.15f;
+                        dashSpeed = 7f;
                     }
 
                     if (transform.localRotation.eulerAngles.y == 180)
@@ -222,7 +220,7 @@ public class boar : MonoBehaviour
                     }
 
                     pos = transform.position;
-                    pos.x += move.x * dashSpeed;
+                    pos.x += move.x * dashSpeed * Time.deltaTime;
                     transform.position = pos;
 
                 }

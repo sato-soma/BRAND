@@ -77,8 +77,8 @@ public class crow : MonoBehaviour
                 times[0] += 1.0f / 60.0f;
 
                 pos = transform.position;
-                pos.x -= speed;
-                pos.y -= down;
+                pos.x -= speed * Time.deltaTime;
+                pos.y -= down * Time.deltaTime;
                 transform.position = pos;
             }
 
@@ -99,7 +99,7 @@ public class crow : MonoBehaviour
                     times[1] += 1.0f / 60.0f;
 
                     pos = transform.position;
-                    pos.x -= speed;
+                    pos.x -= speed * Time.deltaTime;
                     transform.position = pos;
                 }
 
@@ -126,8 +126,8 @@ public class crow : MonoBehaviour
                 times[2] += 1.0f / 60.0f;
 
                 pos = transform.position;
-                pos.x -= speed;
-                pos.y += up;
+                pos.x -= speed * Time.deltaTime;
+                pos.y += up * Time.deltaTime;
                 transform.position = pos;
             }
 
