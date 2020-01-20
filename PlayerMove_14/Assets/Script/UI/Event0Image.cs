@@ -25,23 +25,23 @@ public class Event0Image : MonoBehaviour
 
         if (StopTime0 == false) //カウントが止まってないなら
         {
-            Event0ImageTime -= 1.0f / 60.0f;
+            Event0ImageTime -= Time.deltaTime;
         }
 
         //Event1ImageTimeを減らしていき一定以下になったらSpriteを消す
         //12以下で表示
         if (Event0ImageTime < EventDisplayTime * 4)
         {
-            StopTime0 = true;
-            Event0ImageTime = MaxTime;
-            /*
+                
             transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
             transform.GetChild(1).gameObject.SetActive(true);
-            */
+            
         }
         // 9以下で表示
         if (Event0ImageTime < EventDisplayTime * 3)
         {
+            StopTime0 = true;
+            Event0ImageTime = MaxTime;
             /*
             transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
             transform.GetChild(2).gameObject.SetActive(true);

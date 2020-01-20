@@ -24,7 +24,7 @@ public class Event3Image : MonoBehaviour
 
         if (StopTime3 == false) //カウントが止まってないなら
         {
-            Event3ImageTime -= 1.0f / 60.0f;
+            Event3ImageTime -= Time.deltaTime;
         }
 
         //Event3ImageTimeを減らしていき一定以下になったらSpriteを消す

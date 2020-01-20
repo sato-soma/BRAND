@@ -39,17 +39,18 @@ public class Event1Image : MonoBehaviour
         }
         if (Event1ImageTime < EventDisplayTime * 2)
         {
-
-            transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
-            transform.GetChild(2).gameObject.SetActive(true);
+            StopTime1 = true;
+            Event1ImageTime = MaxTime;
+            //transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
+            //transform.GetChild(2).gameObject.SetActive(true);
 
         }
         if (Event1ImageTime < EventDisplayTime)
         {
 
-            StopTime1 = true;
-            transform.GetChild(2).gameObject.SetActive(true);
-            Event1ImageTime = MaxTime;
+            //StopTime1 = true;
+            //transform.GetChild(2).gameObject.SetActive(true);
+            //Event1ImageTime = MaxTime;
 
         }
     }

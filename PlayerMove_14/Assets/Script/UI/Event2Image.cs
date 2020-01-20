@@ -30,14 +30,16 @@ public class Event2Image : MonoBehaviour
         //Event1ImageTimeを減らしていき一定以下になったらSpriteを消す
         if (Event2ImageTime < EventDisplayTime * 2)
         {
-            transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
-            transform.GetChild(1).gameObject.SetActive(true);
+            //transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
+            //transform.GetChild(1).gameObject.SetActive(true);
+            StopTime2 = true;
+            Event2ImageTime = MaxTime;
         }
         if (Event2ImageTime < EventDisplayTime)
         {
-            StopTime2 = true;
-            transform.GetChild(1).gameObject.SetActive(true);
-            Event2ImageTime = MaxTime;
+        //    StopTime2 = true;
+        //    transform.GetChild(1).gameObject.SetActive(true);
+        //    Event2ImageTime = MaxTime;
         }
     }
 
