@@ -16,9 +16,13 @@ public class BGM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (SceneManager.GetActiveScene().name == "stage2")
+        //{
+        //    Destroy(gameObject);
+        //}
         if (SceneManager.GetActiveScene().name == "close")
         {
-            audioSource.Stop();
+            Destroy(gameObject);
         }
     }
 }
