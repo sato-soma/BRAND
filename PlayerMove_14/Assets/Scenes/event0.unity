@@ -393,10 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event0ImageTime: 15
   MaxTime: 15
-  EventImage0: 12
-  EventImage1: 9
-  EventImage2: 6
-  EventImage3: 3
+  EventDisplayTime: 3
 --- !u!1 &1361328966
 GameObject:
   m_ObjectHideFlags: 0

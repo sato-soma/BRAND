@@ -7,53 +7,56 @@ public class ReturmGame : MonoBehaviour
 {
     public GameObject playerobject;
 
-    public static Vector3 PlayerRestartPosition0;
-    public static Vector3 PlayerRestartPosition1;
-    public static Vector3 HpUiRestartPosition;
-
-    public static int HpResutartCount;
-    public static int HpUiResutart;
-    public static bool RestartFlag1;
-    public static bool RestartFlag0;
-
-
+    public static bool[] RestartFlag = new bool[4]; //イベントから帰ってきたか(イベント後のギミックでfalseにする)
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerRestartPosition0 = PlayerMove.PlayerPositioned0; //イベント0前のPlayer位置保存
-        PlayerRestartPosition1 = PlayerMove.PlayerPositioned1; //イベント1前のPlayer位置保存
-
-        // HpUiRestartPosition = HPUI.HpUiPositionOld; //UIの位置保存
-        // HpResutartCount = HPUI.HitCount; //イベント前のHP保存
 
     }
 
     // Update is called once per frame
     void Update()
-    {
-        // 一つ目イベントから移行
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetButton("Event")|| Event0Image.StopTime0==true)
+    {      
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetButton("Event") || 
+            Event0Image.StopTime0 == true ||Event1Image.StopTime1==true || 
+            Event2Image.StopTime2 == true || Event3Image.StopTime3 == true)
         {
+            // ステージ1の一つ目イベントから移行
             if (Event0.Event_0Flag == true)
             {
-                RestartFlag0 = true;
+                RestartFlag[0] = true;
                 SceneManager.LoadScene("playerMove");
             }
-        }
 
-        // 二つ目のイベントから移行
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetButton("Event") || Event1Image.StopTime1 == true)
-        {
+            // ステージ1の二つ目イベントから移行
             if (Event1.Event_1Flag == true)
             {
-                RestartFlag1 = true;
-                LongFallingFloor.LongPassFlag = true;
+                RestartFlag[1] = true;               
                 SceneManager.LoadScene("playerMove");
+                LongFallingFloor.LongPassFlag = true;
+            }
+
+            // ステージ2の一つ目イベントから移行
+            if (Event2.Event_2Flag == true)
+            {
+               // RestartFlag[2] = true;
+                SceneManager.LoadScene("playerMove");
+            }
+
+            // ステージ2の二つ目イベントから移行
+            if (Event3.Event_3Flag == true)
+            {
+              //  RestartFlag[3] = true;
+                SceneManager.LoadScene("playerMove");             
             }
         }
 
        
+
+       
+
+
 
 
 

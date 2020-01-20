@@ -12,14 +12,10 @@ public class PlayerHP : MonoBehaviour
     private float Blue;
     private float AlfaMax = 1; //固定
     private float AlfaMin = 0; //固定
-    //private float DamageAlfaSpeed = 0.34f; //アルファ値の変更スピード
     private float Alfa; //透明度
 
     public static bool FadeOut = false; //明るくする
     public static bool FadeIn = false; //暗くする
-
-   
-    public static int Damage1; //仮
 
     // Start is called before the first frame update
     void Start()
@@ -28,28 +24,23 @@ public class PlayerHP : MonoBehaviour
         Green = Panel.GetComponent<Image>().color.g;
         Blue = Panel.GetComponent<Image>().color.b;
         Alfa = Panel.GetComponent<Image>().color.a;
-
-        Damage1 = 3; //プレイヤーの体力
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+
         Panel.GetComponent<Image>().color = new Color(Red, Green, Blue, Alfa);
 
         transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
-        transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
+        transform.GetChild(1).gameObject.SetActive(false);
 
-        Debug.Log(Damage1);
-
-        if (FadeIn==true) //暗くする
+        if (FadeIn == true) //画面を真っ暗にする
         {
             Alfa = AlfaMax;
-
         }
 
-        if (FadeOut == true) //明るくする
+        if (FadeOut == true) //徐々に画面を明るくする
         {
             Alfa -= 0.01f;
 
@@ -59,16 +50,16 @@ public class PlayerHP : MonoBehaviour
             }
         }
 
-        //とりあえず
-        if (Damage1 > 0)
+        //とりあえずダメージを受けた時画面を暗くする画像表示
+        if (PlayerDeath.HitCount > 0)
         {
-            if (Damage1 == 2)
-            {     
+            if (PlayerDeath.HitCount == 2)
+            {
                 transform.GetChild(0).gameObject.SetActive(true); //Spriteを表示
             }
-            else if (Damage1 == 1)
+            else if (PlayerDeath.HitCount == 1)
             {
-                transform.GetChild(1).gameObject.SetActive(true);             
+                transform.GetChild(1).gameObject.SetActive(true);
             }
         }
     }

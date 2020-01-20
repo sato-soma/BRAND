@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TreeChange : MonoBehaviour
 {
-    private bool ChangeTreeFlag;
+    private bool ChangeTreeFlag; //オブジェクトが切り替わっているか
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,8 @@ public class TreeChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        if (ReturmGame.RestartFlag0 == true)
+
+        if (ReturmGame.RestartFlag[0] == true)
         {
             ChangeTreeFlag = true;
         }
@@ -26,32 +26,30 @@ public class TreeChange : MonoBehaviour
             transform.GetChild(1).gameObject.SetActive(true);
         }
 
-        // 木のオブジェクトが切り替わっていたら
-        if(ChangeTreeFlag==true)
+        // イベント後オブジェクトが切り替える
+        if (ChangeTreeFlag == true)
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(false);
-            ReturmGame.RestartFlag0 = false;
+            transform.GetChild(2).gameObject.SetActive(false);
+            ReturmGame.RestartFlag[0] = false;
         }
 
+        // キー操作はデバック用↓
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    transform.GetChild(0).gameObject.SetActive(true);
+        //    transform.GetChild(1).gameObject.SetActive(false);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    transform.GetChild(1).gameObject.SetActive(true);
+        //    transform.GetChild(0).gameObject.SetActive(false);
+        //}
 
-        Debug.Log(ChangeTreeFlag);
-
-        // キー操作はデバック用
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            transform.GetChild(0).gameObject.SetActive(true);
-            transform.GetChild(1).gameObject.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            transform.GetChild(1).gameObject.SetActive(true);
-            transform.GetChild(0).gameObject.SetActive(false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            ChangeTreeFlag = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    ChangeTreeFlag = true;
+        //}
     }
 }

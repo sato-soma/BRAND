@@ -34,6 +34,8 @@ public class boar : MonoBehaviour
 
     public bool hit;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,9 @@ public class boar : MonoBehaviour
         {
             times[i] = 0;
         }
+
+        //アニメーション
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -73,7 +78,7 @@ public class boar : MonoBehaviour
 
         if (PlayerHP.FadeIn == true)
         {
-            pos.y = posSave.y;
+            pos = posSave;
             gameObject.SetActive(true);
         }
 
@@ -86,6 +91,8 @@ public class boar : MonoBehaviour
         {
             if (dis >= searchOff && hit == false)
             {
+                anim.SetFloat("Speed", 5.0f);
+
                 times[2] = 0;
                 times[3] = 0;
 
@@ -95,9 +102,9 @@ public class boar : MonoBehaviour
                     times[1] = -1;
                     times[0] += 1.0f / 60f;
 
-                    if (transform.localRotation.eulerAngles.y == 180)
+                    if (transform.localRotation.eulerAngles.y == 0)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        transform.Rotate(Vector3.up, 180f);
                     }
 
                     pos = transform.position;
@@ -117,9 +124,9 @@ public class boar : MonoBehaviour
                 {
                     times[1] += 1.0f / 60f;
 
-                    if (transform.localRotation.eulerAngles.y == 0)
+                    if (transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, 180f);
+                        transform.Rotate(Vector3.up, -180f);
                     }
 
                     pos = transform.position;
@@ -144,6 +151,8 @@ public class boar : MonoBehaviour
         //プレイヤーに当たった時3秒止まる
         if (hit == true)
         {
+            anim.SetFloat("Speed", 0.0f);
+
             if (times[4] < 3)
             {
                 times[4] += 1.0f / 60.0f;
@@ -170,18 +179,19 @@ public class boar : MonoBehaviour
 
                     if (times[2] >= 0)
                     {
-
+                        anim.SetFloat("Speed", 0.0f);
                         dashSpeed = 0;
                     }
 
                     if (times[2] > 2)
                     {
+                        anim.SetFloat("Speed", 5.0f);
                         dashSpeed = 0.15f;
                     }
 
-                    if (transform.localRotation.eulerAngles.y == 180)
+                    if (transform.localRotation.eulerAngles.y == 0)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        transform.Rotate(Vector3.up, 180f);
                     }
 
                     pos = transform.position;
@@ -196,17 +206,19 @@ public class boar : MonoBehaviour
 
                     if (times[3] >= 0)
                     {
+                        anim.SetFloat("Speed", 0.0f);
                         dashSpeed = 0;
                     }
 
                     if (times[3] > 2)
                     {
+                        anim.SetFloat("Speed", 5.0f);
                         dashSpeed = 0.15f;
                     }
 
-                    if (transform.localRotation.eulerAngles.y == 0)
+                    if (transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, 180f);
+                        transform.Rotate(Vector3.up, -180f);
                     }
 
                     pos = transform.position;
