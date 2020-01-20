@@ -23,6 +23,7 @@ public class SceneChange : MonoBehaviour
         {
             if (other.tag == "Player")
             {
+                Reset(); //イベントとかリセット
                 CloseSystem.SecondGame();
             }
         }
