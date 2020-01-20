@@ -61,6 +61,13 @@ public class PlayerState : MonoBehaviour
                 EnemyHit = true;
             }
         }
+        
+        //障害物と当たったら
+        if (collision.gameObject.CompareTag("Blow"))
+        {
+            PlayerDeath.DeathFlag = true;
+        }
+
     }
 
     //敵と離れたら
@@ -70,7 +77,9 @@ public class PlayerState : MonoBehaviour
         {
             EnemyHit = false;
         }
+
     }
+    
 
     //当たったら
     private void OnTriggerEnter(Collider collision)
