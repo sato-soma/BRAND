@@ -3,10 +3,40 @@ guid: d50996303a1f9b2478a6d144af83441b
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bridge
+    second: {fileID: 2100000, guid: f8b15659f6662fb49a7ed7332bfccba3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gate
+    second: {fileID: 2100000, guid: 48fc94d4065b669468937dd63da7b891, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: a5dbb2ffbb29b71479b3ac80034c348a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Log
+    second: {fileID: 2100000, guid: 2082a4d6c7a1d244690aee7b63f34935, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Root
+    second: {fileID: 2100000, guid: 3380ab86effe82e41b1e41a6fe2fa612, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: 21b30178d9325d444b70ecf410842bcd, type: 2}
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 2
     materialSearch: 1
     materialLocation: 0
   animations:
