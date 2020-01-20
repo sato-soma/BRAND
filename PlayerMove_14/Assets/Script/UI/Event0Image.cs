@@ -32,31 +32,27 @@ public class Event0Image : MonoBehaviour
         //12以下で表示
         if (Event0ImageTime < EventDisplayTime * 4)
         {
-            //transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
-            //transform.GetChild(1).gameObject.SetActive(true);
-
-            StopTime0 = true;
-            Event0ImageTime = MaxTime;
+            transform.GetChild(0).gameObject.SetActive(false); //Spriteを消す
+            transform.GetChild(1).gameObject.SetActive(true);
         }
         // 9以下で表示
         if (Event0ImageTime < EventDisplayTime * 3)
         {
-            //transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
-            //transform.GetChild(2).gameObject.SetActive(true);
-           
+            transform.GetChild(1).gameObject.SetActive(false); //Spriteを消す
+            transform.GetChild(2).gameObject.SetActive(true);
         }
-        ////6以下で表示
-        //if (Event0ImageTime < EventDisplayTime * 2)
-        //{
-        //    transform.GetChild(2).gameObject.SetActive(false); //Spriteを消す
-        //    transform.GetChild(3).gameObject.SetActive(true);
-        //}
-        //if (Event0ImageTime < EventDisplayTime)
-        //{
-        //    StopTime0 = true;
-        //    transform.GetChild(3).gameObject.SetActive(true);
-        //    Event0ImageTime = MaxTime;
-        //}
+        //6以下で表示
+        if (Event0ImageTime < EventDisplayTime * 2)
+        {
+            transform.GetChild(2).gameObject.SetActive(false); //Spriteを消す
+            transform.GetChild(3).gameObject.SetActive(true);
+        }
+        if (Event0ImageTime < EventDisplayTime)
+        {
+            StopTime0 = true;
+            transform.GetChild(3).gameObject.SetActive(true);
+            Event0ImageTime = MaxTime;
+        }
     }
 
     void ResetImage() //画像のリセット
