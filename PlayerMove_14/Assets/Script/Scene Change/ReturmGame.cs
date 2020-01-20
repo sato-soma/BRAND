@@ -48,7 +48,7 @@ public class ReturmGame : MonoBehaviour
             if (Event3.Event_3Flag == true)
             {
                 RestartFlag[3] = true;
-                SceneManager.LoadScene("stage2");             
+                SceneManager.LoadScene("close");             
             }
         }
 
