@@ -27,6 +27,8 @@ public class Event0 : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log(Event_0Flag);
     }
 
     private void OnTriggerEnter(Collider other)

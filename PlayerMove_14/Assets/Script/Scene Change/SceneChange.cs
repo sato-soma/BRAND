@@ -35,5 +35,7 @@ public class SceneChange : MonoBehaviour
 
         PlayerState.MidPointFlag = false; //中間ポイントに来てないことにする
 
+        MidPointDisplay.PointDisplay = false; //中間ポイントを非表示
+
     }
 }

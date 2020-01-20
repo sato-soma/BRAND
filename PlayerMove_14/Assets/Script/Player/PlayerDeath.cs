@@ -50,6 +50,7 @@ public class PlayerDeath : MonoBehaviour
             if (PlayerState.MidPointFlag == true)
             {
                 Player.transform.position = MidPoint.transform.position;
+                MidPointDisplay.PointDisplay = true;
             }
         }
 
@@ -114,13 +115,13 @@ public class PlayerDeath : MonoBehaviour
             // 死んだときスタート地点にワープする
             if (PlayerHP.FadeIn == false)
             {
-                Player.transform.position = StartPoint.transform.position;
+                //Player.transform.position = StartPoint.transform.position;
 
-                // 中間ポイントに来ていたら中間ポイントにワープ
-                if (PlayerState.MidPointFlag == true)
-                {
-                    Player.transform.position = MidPoint.transform.position;
-                }
+                //// 中間ポイントに来ていたら中間ポイントにワープ
+                //if (PlayerState.MidPointFlag == true)
+                //{
+                //    Player.transform.position = MidPoint.transform.position;
+                //}
 
                 ReStartFlag = true;
             }
