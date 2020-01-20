@@ -9,6 +9,11 @@ public class CloseSystem : MonoBehaviour
         SceneManager.LoadScene("playerMove");
     }
 
+    public static void SecondGame()
+    {
+        SceneManager.LoadScene("stage2");
+    }
+
     public static void CloseGame()
     {
         SceneManager.LoadScene("close");

@@ -2342,6 +2342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 495417005}
   - component: {fileID: 495417004}
+  - component: {fileID: 495417006}
   m_Layer: 0
   m_Name: MidPoint
   m_TagString: MidPoint
@@ -2377,6 +2378,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &495417006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495417003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cb6385722d66b429b3ffa677e05002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &497312630 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d407238fb1b6adc428e47bfd98bb9df7,

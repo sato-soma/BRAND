@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
@@ -18,11 +19,21 @@ public class SceneChange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (SceneManager.GetActiveScene().name == "playerMove")
         {
-            Reset(); //イベントとかリセット
+            if (other.tag == "Player")
+            {
+                CloseSystem.SecondGame();
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "stage2")
+        {
+            if (other.tag == "Player")
+            {
+                Reset(); //イベントとかリセット
 
-            CloseSystem.CloseGame();
+                CloseSystem.CloseGame();
+            }
         }
     }
 
