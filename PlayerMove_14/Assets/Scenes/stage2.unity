@@ -3636,8 +3636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventPosition:
-  - {fileID: 1457598698}
-  - {fileID: 917836135}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 1457598698}
   - {fileID: 917836135}
 --- !u!114 &900459986

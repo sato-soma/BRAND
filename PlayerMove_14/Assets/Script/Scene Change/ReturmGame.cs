@@ -40,14 +40,14 @@ public class ReturmGame : MonoBehaviour
             // ステージ2の一つ目イベントから移行
             if (Event2.Event_2Flag == true)
             {
-               // RestartFlag[2] = true;
+                RestartFlag[2] = true;
                 SceneManager.LoadScene("stage2");
             }
 
             // ステージ2の二つ目イベントから移行
             if (Event3.Event_3Flag == true)
             {
-              //  RestartFlag[3] = true;
+                RestartFlag[3] = true;
                 SceneManager.LoadScene("stage2");             
             }
         }
