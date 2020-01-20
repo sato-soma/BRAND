@@ -19,7 +19,9 @@ public class bat : MonoBehaviour
     //視覚範囲距離の数値
     public float search;
 
-    public float[] time = new float[2];
+    public bool hit;
+
+    public float times;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +31,9 @@ public class bat : MonoBehaviour
         pos = transform.position;
         pos = posSave;
 
-        time[0] = 0;
-        time[1] = 0;
+        hit = false;
+
+        times = 0;
     }
 
     // Update is called once per frame
@@ -38,7 +41,20 @@ public class bat : MonoBehaviour
     {
         float dis = Vector3.Distance(player.transform.position, transform.position);
 
-        if (dis < search)
+        if (hit == true)
+        {
+            if (times < 3)
+            {
+                times += 1.0f / 60.0f;
+            }
+            else
+            {
+                times = 0;
+                hit = false;
+            }
+        }
+
+        if (dis < search && hit == false)
         {
             pos = transform.position;
             pos.x -= speed * Time.deltaTime;
@@ -93,6 +109,11 @@ public class bat : MonoBehaviour
         {
             transform.gameObject.SetActive(false);
             pos = posSave;
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            hit = true;
         }
     }
 }

@@ -700,7 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.8
+  speed: 1
   dashSpeed: 0
   searchOn: 0
   searchOff: 0
@@ -1119,11 +1119,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   speed: 2
-  posY: -18.88
+  posY: -20.33
   search: 20
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &136229079
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1192,6 +1191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat_Fly (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d407238fb1b6adc428e47bfd98bb9df7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_CullingMode
@@ -1205,12 +1209,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39
+      value: -39.97
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.88
+      value: -20.33
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
@@ -1296,9 +1300,8 @@ MonoBehaviour:
   speed: 2
   posY: -8.2
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &171466818
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1785,9 +1788,8 @@ MonoBehaviour:
   speed: 2
   posY: -14.8
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &352997023
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1892,9 +1894,8 @@ MonoBehaviour:
   speed: 2
   posY: -16.9
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &380755779
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2041,9 +2042,8 @@ MonoBehaviour:
   speed: 2
   posY: -7
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &406619130
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2300,9 +2300,8 @@ MonoBehaviour:
   speed: 2
   posY: -9.6
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &490699452
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2398,11 +2397,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   speed: 2
-  posY: -12.92
+  posY: -13.47
   search: 20
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &497312632
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3297,11 +3295,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   speed: 2
-  posY: -13.56
+  posY: -14.29
   search: 20
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &761924144
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3540,9 +3537,8 @@ MonoBehaviour:
   speed: 2
   posY: -10.6
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &890476722
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4795,9 +4791,8 @@ MonoBehaviour:
   speed: 2
   posY: -8.2
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1091515127
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4963,9 +4958,8 @@ MonoBehaviour:
   speed: 2
   posY: -9.6
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1193152161
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5018,9 +5012,8 @@ MonoBehaviour:
   speed: 2
   posY: -14.57
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1195875741
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5367,9 +5360,8 @@ MonoBehaviour:
   speed: 2
   posY: -1.4
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1233823375
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5422,9 +5414,8 @@ MonoBehaviour:
   speed: 2
   posY: -10.5
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1258289010
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5825,9 +5816,8 @@ MonoBehaviour:
   speed: 2
   posY: -8.2
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1348048993
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6040,7 +6030,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.19
+      value: -18.94
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
@@ -6136,9 +6126,8 @@ MonoBehaviour:
   speed: 2
   posY: -13.8
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1425781537
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6235,9 +6224,8 @@ MonoBehaviour:
   speed: 2
   posY: -9.7
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1440640184
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6832,9 +6820,8 @@ MonoBehaviour:
   speed: 2
   posY: -11.66
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1607783463
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7075,9 +7062,8 @@ MonoBehaviour:
   speed: 2
   posY: -8.2
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1640364972
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7130,9 +7116,8 @@ MonoBehaviour:
   speed: 2
   posY: -12.5
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1652744613
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7454,9 +7439,8 @@ MonoBehaviour:
   speed: 2
   posY: -10.7
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1716097824
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7499,6 +7483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat_Fly (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d407238fb1b6adc428e47bfd98bb9df7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_CullingMode
@@ -7512,12 +7501,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39
+      value: -39.97
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.25
+      value: -19.87
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
@@ -7721,6 +7710,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat_Fly (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d407238fb1b6adc428e47bfd98bb9df7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_CullingMode
@@ -7734,12 +7728,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -101.28
+      value: -101.54
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.85
+      value: -14.29
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
@@ -7919,9 +7913,8 @@ MonoBehaviour:
   speed: 2
   posY: -8.2
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1786799916
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8065,9 +8058,8 @@ MonoBehaviour:
   speed: 2
   posY: -3.95
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1799974672
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8120,9 +8112,8 @@ MonoBehaviour:
   speed: 2
   posY: -18.89
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1817900325
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8670,9 +8661,8 @@ MonoBehaviour:
   speed: 2
   posY: -8.2
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &1950733318
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8951,6 +8941,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat_Fly
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d407238fb1b6adc428e47bfd98bb9df7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_CullingMode
@@ -8964,12 +8959,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.55
+      value: -100.810005
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.21
+      value: -13.47
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d407238fb1b6adc428e47bfd98bb9df7,
         type: 3}
@@ -9053,11 +9048,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   speed: 2
-  posY: -18.25
+  posY: -19.87
   search: 20
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &2031518199
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9223,7 +9217,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.4
+      value: -13.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
@@ -9352,7 +9346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   move: {x: 0, y: 0, z: 0}
-  speed: 0.8
+  speed: 1
   dashSpeed: 0
   searchOn: 0
   searchOff: 0
@@ -9459,9 +9453,8 @@ MonoBehaviour:
   speed: 2
   posY: -6.5
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &2080449885
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9514,9 +9507,8 @@ MonoBehaviour:
   speed: 2
   posY: -9.53
   search: 50
-  time:
-  - 0
-  - 0
+  hit: 0
+  times: 0
 --- !u!136 &2113558572
 CapsuleCollider:
   m_ObjectHideFlags: 0
