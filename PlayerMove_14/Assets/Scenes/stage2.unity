@@ -700,8 +700,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   move: {x: 0, y: 0, z: 0}
-  speed: 1
-  dashSpeed: 3
+  speed: 0.8
+  dashSpeed: 0
   searchOn: 0
   searchOff: 0
   times:
@@ -5726,6 +5726,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 7f065b8d243903c4aa2ddccbb54faa95,
+        type: 3}
+      propertyPath: m_Name
+      value: sister-done
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7f065b8d243903c4aa2ddccbb54faa95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5734,7 +5739,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7f065b8d243903c4aa2ddccbb54faa95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.57
+      value: -5.09
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7f065b8d243903c4aa2ddccbb54faa95,
         type: 3}
@@ -5795,11 +5800,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 7f065b8d243903c4aa2ddccbb54faa95,
-        type: 3}
-      propertyPath: m_Name
-      value: sister-done
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f065b8d243903c4aa2ddccbb54faa95, type: 3}
@@ -6035,12 +6035,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -72.07
+      value: -72.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.41
+      value: -17.19
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
@@ -9223,7 +9223,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.94
+      value: -11.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 57a7a304955438e4592e772dbb366d14,
         type: 3}
@@ -9352,8 +9352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 900459983}
   move: {x: 0, y: 0, z: 0}
-  speed: 1
-  dashSpeed: 3
+  speed: 0.8
+  dashSpeed: 0
   searchOn: 0
   searchOff: 0
   times:

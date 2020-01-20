@@ -55,7 +55,7 @@ public class spider : MonoBehaviour
 
         EenmyAIOff();
 
-        EnemyAIOn();
+        //EnemyAIOn();
     }
 
     private void EenmyAIOff()
@@ -105,6 +105,7 @@ public class spider : MonoBehaviour
         }
     }
 
+    /*
     private void EnemyAIOn()
     {
         //視覚範囲入った時、プレイヤーを追いかける
@@ -158,4 +159,5 @@ public class spider : MonoBehaviour
             }
         }
     }
+    */
 }
