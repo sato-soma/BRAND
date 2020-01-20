@@ -9,6 +9,7 @@ public class bat : MonoBehaviour
     private Rigidbody rigid;
 
     private Vector3 pos;
+    private Vector3 posSave;
 
     private Vector3 vector;
 
@@ -24,7 +25,9 @@ public class bat : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
+
         pos = transform.position;
+        pos = posSave;
 
         time[0] = 0;
         time[1] = 0;
@@ -35,15 +38,21 @@ public class bat : MonoBehaviour
     {
         float dis = Vector3.Distance(player.transform.position, transform.position);
 
-        if (dis < 30)
+        if (dis < search)
         {
+            pos = transform.position;
+            pos.x -= speed * Time.deltaTime;
+            pos.y = posY + Mathf.PingPong(Time.time, 1f);
+            transform.position = pos;
+
+            /*
             if (time[0] >= 0)
             {
                 time[1] = -1;
                 time[0] += 1.0f / 60f;
                 pos = transform.position;
-                pos.x -= speed;
-                pos.y = posY + Mathf.PingPong(time[0], 1f);
+                pos.x -= speed * Time.deltaTime;
+                pos.y = posY + Mathf.PingPong(Time.time, 1f);
                 transform.position = pos;
             }
 
@@ -58,7 +67,7 @@ public class bat : MonoBehaviour
                 time[0] = -1;
                 time[1] += 1.0f / 60f;
                 pos = transform.position;
-                pos.x -= speed;
+                pos.x -= speed * Time.deltaTime;
                 transform.position = pos;
             }
 
@@ -68,8 +77,22 @@ public class bat : MonoBehaviour
                 time[0] = 0;
             }
             //rigid.MovePosition(new Vector3(pos.x, pos.y, pos.z));
+            */
         }
-        
+
+        if (PlayerHP.FadeIn == true)
+        {
+            transform.gameObject.SetActive(true);
+        }
+
     }
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        //これプレイヤーにつけてHP管理する
+        if (collision.gameObject.CompareTag("Blow"))
+        {
+            transform.gameObject.SetActive(false);
+            pos = posSave;
+        }
+    }
 }
