@@ -11,6 +11,7 @@ TagManager:
   - BridgeEnd
   - BridgeStart2
   - Blow
+  - BGM
   layers:
   - Default
   - TransparentFX
