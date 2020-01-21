@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class BGM2 : MonoBehaviour
 {
-    GameObject[] tagObjects;
+    GameObject[] tagObjects2;
     public AudioSource audioSource;
     //int objs;
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this);
-        tagObjects = GameObject.FindGameObjectsWithTag("BGM");
-        Destroy(tagObjects[1]);
+        //tagObjects2 = GameObject.FindGameObjectsWithTag("BGM");
+        //Destroy(tagObjects2[1]);
 
     }
 
