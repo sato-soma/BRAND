@@ -6,10 +6,13 @@ public class bat : MonoBehaviour
 {
     public GameObject player;
 
+    public GameObject bats;
+
     private Rigidbody rigid;
 
-    private Vector3 pos;
-    private Vector3 posSave;
+    public Vector3 pos;
+
+    public Vector3 posSave;
 
     private Vector3 vector;
 
@@ -28,8 +31,11 @@ public class bat : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
 
-        pos = transform.position;
-        pos = posSave;
+        pos = bats.transform.position;
+
+        posY = bats.transform.position.y;
+
+        posSave = pos;
 
         hit = false;
 
@@ -39,7 +45,7 @@ public class bat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dis = Vector3.Distance(player.transform.position, transform.position);
+        float dis = Vector3.Distance(player.transform.position, bats.transform.position);
 
         if (hit == true)
         {
@@ -56,12 +62,13 @@ public class bat : MonoBehaviour
 
         if (dis < search && hit == false)
         {
-            pos = transform.position;
+            pos = bats.transform.position;
             pos.x -= speed * Time.deltaTime;
             pos.y = posY + Mathf.PingPong(Time.time, 1f);
-            transform.position = pos;
+            bats.transform.position = pos;
 
             /*
+            //直進行動
             if (time[0] >= 0)
             {
                 time[1] = -1;
@@ -95,20 +102,15 @@ public class bat : MonoBehaviour
             //rigid.MovePosition(new Vector3(pos.x, pos.y, pos.z));
             */
         }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            transform.gameObject.SetActive(true);
-        }
-
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //これプレイヤーにつけてHP管理する
+        //転がる岩に当たるとオブジェクトが消える
         if (collision.gameObject.CompareTag("Blow"))
         {
-            transform.gameObject.SetActive(false);
             pos = posSave;
+            bats.SetActive(false);
         }
 
         if (collision.gameObject.CompareTag("Player"))

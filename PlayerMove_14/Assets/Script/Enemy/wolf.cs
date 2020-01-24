@@ -10,9 +10,11 @@ public class wolf : MonoBehaviour
     public GameObject player;
 
     //オオカミ
-    private Vector3 pos;
+    public GameObject wolfs;
 
-    private Vector3 posSave;
+    public Vector3 pos;
+
+    public Vector3 posSave;
 
     //プレイヤーとオオカミの距離
     public Vector3 move;
@@ -25,7 +27,7 @@ public class wolf : MonoBehaviour
     public float searchOn;
     public float searchOff;
 
-    public Ray ray ;
+    public Ray ray;
    
     public RaycastHit hit;
 
@@ -47,7 +49,7 @@ public class wolf : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
 
-        pos = gameObject.transform.position;
+        pos = wolfs.transform.position;
 
         posSave = pos;
 
@@ -70,7 +72,7 @@ public class wolf : MonoBehaviour
         move.Normalize();
 
         //プレイヤーとオオカミの距離が視覚範囲の数値と比較
-        dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, pos);
 
         EnemyTargetOff();
 
@@ -78,14 +80,9 @@ public class wolf : MonoBehaviour
 
         if (pos.y < posFall)
         {
+            wolfs.SetActive(false);
             pos = posSave;
         }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            pos = posSave;
-        }
-
     }
 
     //視覚範囲入ってない時、通常移動
@@ -107,9 +104,9 @@ public class wolf : MonoBehaviour
                     times[1] = -1;
                     times[0] += 1.0f / 60f;
 
-                    if (transform.localRotation.eulerAngles.y == 0)
+                    if (wolfs.transform.localRotation.eulerAngles.y == 0)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        wolfs.transform.Rotate(Vector3.up, -180f);
                     }
 
                     //障害物飛び越えるためのソース
@@ -125,9 +122,9 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    pos = transform.position;
+                    pos = wolfs.transform.position;
                     pos.x -= speed * Time.deltaTime;
-                    transform.position = pos;
+                    wolfs.transform.position = pos;
                 }
 
                 //3秒以上の時、反対に移動
@@ -155,14 +152,14 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    if (transform.localRotation.eulerAngles.y == 180)
+                    if (wolfs.transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        wolfs.transform.Rotate(Vector3.up, -180f);
                     }
 
-                    pos = transform.position;
+                    pos = wolfs.transform.position;
                     pos.x += speed * Time.deltaTime;
-                    transform.position = pos;
+                    wolfs.transform.position = pos;
                 }
 
                 //3秒以上の時、反対に移動
@@ -200,7 +197,7 @@ public class wolf : MonoBehaviour
                 times[0] = 0;
                 times[1] = 0;
 
-                if (transform.position.x >= player.transform.position.x)
+                if (wolfs.transform.position.x >= player.transform.position.x)
                 {
                     times[2] += 1.0f / 60f;
                     times[3] = 0;
@@ -214,7 +211,7 @@ public class wolf : MonoBehaviour
                     if (times[2] > 1.5f)
                     {
                         anim.SetFloat("Speed", 0.6f);
-                        dashSpeed = 7f;
+                        dashSpeed = 6f;
                     }
 
                     //障害物飛び越えるためのソース
@@ -230,17 +227,17 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    if (transform.localRotation.eulerAngles.y == 0)
+                    if (wolfs.transform.localRotation.eulerAngles.y == 0)
                     {
-                        transform.Rotate(Vector3.up, 180f);
+                        wolfs.transform.Rotate(Vector3.up, 180f);
                     }
 
-                    pos = transform.position;
+                    pos = wolfs.transform.position;
                     pos.x += move.x * dashSpeed * Time.deltaTime;
-                    transform.position = pos;
+                    wolfs.transform.position = pos;
                 }
 
-                if (transform.position.x <= player.transform.position.x)
+                if (wolfs.transform.position.x <= player.transform.position.x)
                 {
                     times[2] = 0;
                     times[3] += 1.0f / 60.0f;
@@ -254,7 +251,7 @@ public class wolf : MonoBehaviour
                     if (times[3] > 1.5f)
                     {
                         anim.SetFloat("Speed", 0.6f);
-                        dashSpeed = 7f;
+                        dashSpeed = 6f;
                     }
 
                     //障害物飛び越えるためのソース
@@ -270,13 +267,13 @@ public class wolf : MonoBehaviour
                     //    }
                     //}
 
-                    if (transform.localRotation.eulerAngles.y == 180)
+                    if (wolfs.transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        wolfs.transform.Rotate(Vector3.up, -180f);
                     }
-                    pos = transform.position;
+                    pos = wolfs.transform.position;
                     pos.x += move.x * dashSpeed * Time.deltaTime;
-                    transform.position = pos;
+                    wolfs.transform.position = pos;
 
                 }
             }

@@ -5,20 +5,19 @@ using UnityEngine;
 public class rabbit : MonoBehaviour
 {
     public GameObject player;
-    public GameObject rabbits;
 
-    public Color alpha;
+    public GameObject rabbits;
 
     private Rigidbody rigid;
 
-    private Vector3 pos;
-    private Vector3 posSave;
+    public Vector3 pos;
+
+    public Vector3 posSave;
 
     public float speed;
     public float dashSpeed;
 
     public float posFall;
-    public float posFront;
 
     public float jump;
 
@@ -38,13 +37,11 @@ public class rabbit : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
 
-        alpha = new Color();
-
         //現在位置
         pos = rabbits.transform.position;
 
         //保存
-        posSave = rabbits.transform.position;
+        posSave = pos;
 
         count = 0;
 
@@ -54,23 +51,15 @@ public class rabbit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, pos);
 
         EnemyNomal();
         
         if (pos.y < posFall)
         {
             rabbits.SetActive(false);
-            pos.y = -5;
-        }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            rabbits.SetActive(true);
             pos = posSave;
         }
-
-        rabbits.transform.position = pos;
         
     }
 
@@ -98,13 +87,7 @@ public class rabbit : MonoBehaviour
                     pos.x -= dashSpeed * Time.deltaTime;
                     rabbits.transform.position = pos;
                 }
-
-                //オブジェクト消せるか考え中
-                if (pos.x > pos.x - 100f)
-                {
-                    if (alpha.a >= 0)
-                        alpha.a -= 0.1f;
-                }
+                
             }
 
         }

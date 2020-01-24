@@ -9,12 +9,12 @@ public class snake : MonoBehaviour
     //プレイヤー
     public GameObject player;
 
-    //イノシシ
+    //蛇
     private Vector3 pos;
 
     private Vector3 posSave;
 
-    //プレイヤーとイノシシの距離
+    //プレイヤーと蛇の距離
     public Vector3 move;
 
     //移動速度
@@ -54,11 +54,11 @@ public class snake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //プレイヤーとイノシシの距離
+        //プレイヤーと蛇の距離
         move = player.transform.position - pos;
         move.Normalize();
 
-        //プレイヤーとイノシシの距離が視覚範囲の数値と比較
+        //プレイヤーと蛇の距離の数値
         dis = Vector3.Distance(player.transform.position, transform.position);
 
         EnemyTargetOff();
@@ -207,7 +207,6 @@ public class snake : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //これプレイヤーにつけてHP管理する
         if (collision.gameObject.CompareTag("Player"))
         {
             hit = true;

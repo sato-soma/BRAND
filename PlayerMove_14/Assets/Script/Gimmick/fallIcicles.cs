@@ -4,27 +4,37 @@ using UnityEngine;
 
 public class fallIcicles : MonoBehaviour
 {
-    private Rigidbody rigid;
+    public Rigidbody rigid;
 
     //プレイヤー
     public GameObject player;
 
-    //落石
-    private Vector3 pos;
+    //石筍（つらら石）
+    public GameObject fallIcicless;
 
-    private Vector3 posSave;
+    public Vector3 pos;
 
+    //石筍の位置保存
+    public Vector3 posSave;
+    
+    //プレイヤーとの距離
     public float dis;
+
+    //範囲の数値
     public float search;
-    public bool hit;
+
     public float posFall;
+
+    //プレイヤーに当たった時の判定
+    public bool hit;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
 
-        pos = gameObject.transform.position;
+        pos = fallIcicless.transform.position;
 
         posSave = pos;
 
@@ -34,10 +44,10 @@ public class fallIcicles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //プレイヤーと落石の距離の範囲の数値と比較
-        dis = Vector3.Distance(player.transform.position, gameObject.transform.position);
+        //プレイヤーと石筍の距離数値
+        dis = Vector3.Distance(player.transform.position, fallIcicless.transform.position);
 
-        pos = gameObject.transform.position;
+        pos = fallIcicless.transform.position;
 
         if (hit == false)
         {
@@ -49,23 +59,16 @@ public class fallIcicles : MonoBehaviour
             }
         }
 
-        //落ちてくるつららが指定した数値より下だった場合、元の位置に戻る
+        //落ちてくる石筍が指定した数値より下だった場合、元の位置に戻る
         if (pos.y < posFall)
         {
             rigid.isKinematic = true;
             rigid.useGravity = false;
-            transform.gameObject.SetActive(false);
+            fallIcicless.SetActive(false);
             pos = posSave;
         }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            rigid.isKinematic = false;
-            transform.gameObject.SetActive(true);
-            hit = false;
-        }
-
-        gameObject.transform.position = pos;
+        
+        fallIcicless.transform.position = pos;
     }
 }
 

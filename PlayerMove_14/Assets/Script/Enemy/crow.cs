@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class crow : MonoBehaviour
 {
+    //プレイヤー用オブジェクト
     public GameObject player;
 
+    //カラス
+    public GameObject raven;
+
     private Rigidbody rigid;
+
     private Vector3 pos;
-
-    public float posY;
-
+    
     public float speed;
     public float down;
     public float up;
@@ -32,7 +35,7 @@ public class crow : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
 
-        pos = transform.position;
+        pos = raven.transform.position;
 
         confirmation[0] = confirmation[1] = false;
 
@@ -47,13 +50,14 @@ public class crow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, pos);
 
         EnemyNomal();
     }
 
     private void EnemyNomal()
     {
+        //プレイヤーに当たった時その場で3秒止まる
         if (hit == true)
         {
             if (times[4] < 3)
@@ -67,6 +71,7 @@ public class crow : MonoBehaviour
             }
         }
 
+        //プレイヤーがカラスの範囲内に入ったら行動する
         if (dis <= search && hit == false)
         {
             //下降飛行
@@ -76,17 +81,17 @@ public class crow : MonoBehaviour
                 times[2] = -1;
                 times[0] += 1.0f / 60.0f;
 
-                pos = transform.position;
+                pos = raven.transform.position;
                 pos.x -= speed * Time.deltaTime;
                 pos.y -= down * Time.deltaTime;
-                transform.position = pos;
+                raven.transform.position = pos;
             }
 
             if (times[0] > 2)
             {
                 times[0] = -1;
                 times[1] = 0;
-                //pos.y = pos.y + 0;
+                pos.y = pos.y + 0;
                 confirmation[0] = true;
                 confirmation[1] = false;
             }
@@ -98,9 +103,9 @@ public class crow : MonoBehaviour
                 {
                     times[1] += 1.0f / 60.0f;
 
-                    pos = transform.position;
+                    pos = raven.transform.position;
                     pos.x -= speed * Time.deltaTime;
-                    transform.position = pos;
+                    raven.transform.position = pos;
                 }
 
                 if (times[1] > 4)
@@ -125,10 +130,10 @@ public class crow : MonoBehaviour
             {
                 times[2] += 1.0f / 60.0f;
 
-                pos = transform.position;
+                pos = raven.transform.position;
                 pos.x -= speed * Time.deltaTime;
                 pos.y += up * Time.deltaTime;
-                transform.position = pos;
+                raven.transform.position = pos;
             }
 
             if (times[2] > 2)
@@ -144,7 +149,6 @@ public class crow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //これプレイヤーにつけてHP管理する
         if (collision.gameObject.CompareTag("Player"))
         {
             hit = true;

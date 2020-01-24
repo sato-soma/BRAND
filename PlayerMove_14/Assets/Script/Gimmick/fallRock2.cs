@@ -10,13 +10,18 @@ public class fallRock2 : MonoBehaviour
     public GameObject player;
 
     //落石
-    private Vector3 pos;
+    public GameObject fallRocks;
 
-    private Vector3 posSave;
+    public Vector3 pos;
+
+    public Vector3 posSave;
 
     public float dis;
+
     public float search;
+
     public bool hit;
+
     public float posFall;
 
     // Start is called before the first frame update

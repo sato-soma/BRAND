@@ -10,9 +10,11 @@ public class boar : MonoBehaviour
     public GameObject player;
 
     //イノシシ
-    private Vector3 pos;
+    public GameObject boars;
 
-    private Vector3 posSave;
+    public Vector3 pos;
+
+    public Vector3 posSave;
 
     //プレイヤーとイノシシの距離
     public Vector3 move;
@@ -40,10 +42,10 @@ public class boar : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        
+        pos = boars.transform.position;
 
-        posSave = gameObject.transform.position;
-
-        pos = transform.position;
+        posSave = pos;
 
         hit = false;
 
@@ -64,7 +66,7 @@ public class boar : MonoBehaviour
         move.Normalize();
 
         //プレイヤーとイノシシの距離が視覚範囲の数値と比較
-        dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, pos);
 
         EnemyTargetOff();
 
@@ -72,14 +74,10 @@ public class boar : MonoBehaviour
 
         if (pos.y < posFall)
         {
+            boars.SetActive(false);
             pos = posSave;
         }
-
-        if (PlayerHP.FadeIn == true)
-        {
-            pos = posSave;
-        }
-
+        
     }
 
     //視覚範囲入ってない時、通常移動
@@ -100,14 +98,14 @@ public class boar : MonoBehaviour
                     times[1] = -1;
                     times[0] += 1.0f / 60f;
 
-                    if (transform.localRotation.eulerAngles.y == 0)
+                    if (boars.transform.localRotation.eulerAngles.y == 0)
                     {
-                        transform.Rotate(Vector3.up, 180f);
+                        boars.transform.Rotate(Vector3.up, 180f);
                     }
 
-                    pos = transform.position;
+                    pos = boars.transform.position;
                     pos.x -= speed * Time.deltaTime;
-                    transform.position = pos;
+                    boars.transform.position = pos;
                 }
 
                 //4秒以上の時、反対に移動
@@ -122,14 +120,14 @@ public class boar : MonoBehaviour
                 {
                     times[1] += 1.0f / 60f;
 
-                    if (transform.localRotation.eulerAngles.y == 180)
+                    if (boars.transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        boars.transform.Rotate(Vector3.up, -180f);
                     }
 
-                    pos = transform.position;
+                    pos = boars.transform.position;
                     pos.x += speed * Time.deltaTime;
-                    transform.position = pos;
+                    boars.transform.position = pos;
                 }
 
                 //4秒以上の時、反対に移動
@@ -169,7 +167,7 @@ public class boar : MonoBehaviour
                 times[0] = 0;
                 times[1] = 0;
 
-                if (transform.position.x >= player.transform.position.x)
+                if (boars.transform.position.x >= player.transform.position.x)
                 {
 
                     times[2] += 1.0f / 60f;
@@ -184,20 +182,20 @@ public class boar : MonoBehaviour
                     if (times[2] > 2)
                     {
                         anim.SetFloat("Speed", 5.0f);
-                        dashSpeed = 7f;
+                        dashSpeed = 6f;
                     }
 
-                    if (transform.localRotation.eulerAngles.y == 0)
+                    if (boars.transform.localRotation.eulerAngles.y == 0)
                     {
-                        transform.Rotate(Vector3.up, 180f);
+                        boars.transform.Rotate(Vector3.up, 180f);
                     }
 
-                    pos = transform.position;
+                    pos = boars.transform.position;
                     pos.x += move.x * dashSpeed * Time.deltaTime;
-                    transform.position = pos;
+                    boars.transform.position = pos;
                 }
 
-                if (transform.position.x <= player.transform.position.x)
+                if (boars.transform.position.x <= player.transform.position.x)
                 {
                     times[2] = 0;
                     times[3] += 1.0f / 60.0f;
@@ -211,17 +209,17 @@ public class boar : MonoBehaviour
                     if (times[3] > 2)
                     {
                         anim.SetFloat("Speed", 5.0f);
-                        dashSpeed = 7f;
+                        dashSpeed = 6f;
                     }
 
-                    if (transform.localRotation.eulerAngles.y == 180)
+                    if (boars.transform.localRotation.eulerAngles.y == 180)
                     {
-                        transform.Rotate(Vector3.up, -180f);
+                        boars.transform.Rotate(Vector3.up, -180f);
                     }
 
-                    pos = transform.position;
+                    pos = boars.transform.position;
                     pos.x += move.x * dashSpeed * Time.deltaTime;
-                    transform.position = pos;
+                    boars.transform.position = pos;
 
                 }
             }
@@ -234,6 +232,17 @@ public class boar : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             hit = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        //これプレイヤーにつけてHP管理する
+        if (collision.gameObject.CompareTag("Grand"))
+        {
+            pos = boars.transform.position;
+            pos.x += move.x * dashSpeed * Time.deltaTime * 0;
+            boars.transform.position = pos;
         }
     }
 

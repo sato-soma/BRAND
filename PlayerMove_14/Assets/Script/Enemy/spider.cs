@@ -9,10 +9,12 @@ public class spider : MonoBehaviour
     //プレイヤー
     public GameObject player;
 
-    //イノシシ
+    //蜘蛛
+    public GameObject spiders;
+
     private Vector3 pos;
 
-    //プレイヤーとイノシシの距離
+    //プレイヤーと蜘蛛の距離
     public Vector3 move;
 
     //移動速度
@@ -35,7 +37,7 @@ public class spider : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
 
-        pos = transform.position;
+        pos = spiders.transform.position;
 
         hit = false;
 
@@ -51,7 +53,7 @@ public class spider : MonoBehaviour
         move = player.transform.position - pos;
         move.Normalize();
 
-        dis = Vector3.Distance(player.transform.position, transform.position);
+        dis = Vector3.Distance(player.transform.position, spiders.transform.position);
 
         EenmyAIOff();
 
@@ -60,22 +62,22 @@ public class spider : MonoBehaviour
 
     private void EenmyAIOff()
     {
-        //視覚範囲入ってない時、通常移動
+        //視覚範囲入ってない時、通常行動
         if (dis >= searchOff && hit == false)
         {
             times[2] = 0;
             times[3] = 0;
 
-            //0秒以上の時、前進移動
+            //0秒以上の時、下に移動
             if (times[0] >= 0)
             {
                 times[1] = -1;
 
                 times[0] += 1.0f / 60f;
                 
-                pos = transform.position;
+                pos = spiders.transform.position;
                 pos.y -= speed * Time.deltaTime;
-                transform.position = pos;
+                spiders.transform.position = pos;
             }
 
             //4秒以上の時、反対に移動
@@ -85,14 +87,14 @@ public class spider : MonoBehaviour
                 times[1] = 0;
             }
 
-            //0秒以上の時、後退移動
+            //0秒以上の時、上に移動
             if (times[1] >= 0)
             {
                 times[1] += 1.0f / 60f;
                 
-                pos = transform.position;
+                pos = spiders.transform.position;
                 pos.y += speed * Time.deltaTime;
-                transform.position = pos;
+                spiders.transform.position = pos;
             }
 
             //4秒以上の時、反対に移動
@@ -106,15 +108,15 @@ public class spider : MonoBehaviour
     }
 
     /*
+    //視覚範囲内の場合、動くスピードを上げる
     private void EnemyAIOn()
     {
-        //視覚範囲入った時、プレイヤーを追いかける
         if (dis <= searchOn && hit == false)
         {
             times[0] = 0;
             times[1] = 0;
 
-            if (transform.position.x >= player.transform.position.x)
+            if (spiders.transform.position.x >= player.transform.position.x)
             {
 
                 times[2] += 1.0f / 60f;
@@ -131,12 +133,12 @@ public class spider : MonoBehaviour
                     dashSpeed = 0.01f;
                 }
                 
-                pos = transform.position;
+                pos = spiders.transform.position;
                 pos.y = move.y * dashSpeed * Time.deltaTime;
-                transform.position = pos;
+                spiders.transform.position = pos;
             }
 
-            if (transform.position.x <= player.transform.position.x)
+            if (spiders.transform.position.x <= player.transform.position.x)
             {
                 times[2] = 0;
                 times[3] += 1.0f / 60.0f;
@@ -152,9 +154,9 @@ public class spider : MonoBehaviour
                 }
                 
 
-                pos = transform.position;
+                pos = spiders.transform.position;
                 pos.y += move.y * dashSpeed * Time.deltaTime;
-                transform.position = pos;
+                spiders.transform.position = pos;
 
             }
         }

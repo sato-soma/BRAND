@@ -9,16 +9,19 @@ public class fallRock : MonoBehaviour
     //プレイヤー
     public GameObject player;
 
+    public GameObject fallRocks;
+
     //落石
-    private Vector3 localGravity;
+    public Vector3 pos;
 
-    private Vector3 pos;
-
-    private Vector3 posSave;
+    public Vector3 posSave;
 
     public float dis;
+
     public float search;
+
     public bool hit;
+
     public float posFall;
 
     // Start is called before the first frame update
