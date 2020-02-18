@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 205321110}
   m_Layer: 0
   m_Name: bat (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2584,7 +2584,7 @@ GameObject:
   - component: {fileID: 553331164}
   m_Layer: 0
   m_Name: bat (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3012,7 +3012,7 @@ GameObject:
   - component: {fileID: 633379999}
   m_Layer: 0
   m_Name: bat (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4329,6 +4329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b726978c67b43a74da392d1b249803cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
   player: {fileID: 900459983}
   fallIcicless: {fileID: 949317890}
   pos: {x: 0, y: 0, z: 0}
@@ -4685,7 +4686,7 @@ GameObject:
   - component: {fileID: 1021950094}
   m_Layer: 0
   m_Name: spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5059,6 +5060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b726978c67b43a74da392d1b249803cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
   player: {fileID: 900459983}
   fallIcicless: {fileID: 1045866739}
   pos: {x: 0, y: 0, z: 0}
@@ -7201,7 +7203,7 @@ GameObject:
   - component: {fileID: 1506086173}
   m_Layer: 0
   m_Name: spider (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8557,6 +8559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b726978c67b43a74da392d1b249803cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
   player: {fileID: 900459983}
   fallIcicless: {fileID: 1752412268}
   pos: {x: 0, y: 0, z: 0}
@@ -11177,6 +11180,9 @@ MonoBehaviour:
   - {fileID: 1045866739}
   - {fileID: 949317890}
   - {fileID: 1752412268}
+  time:
+  - 0
+  - 0
   number: 0400000003000000
 --- !u!4 &2088803148
 Transform:
